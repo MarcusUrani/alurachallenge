@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 import Logo from "../../Assets/images/Logo.png";
 import { TextField } from "@mui/material";
+import FooterLink from "../FooterLink";
 
 const Footer = () => {
   return (
@@ -10,24 +11,12 @@ const Footer = () => {
         <section className="footer__content">
           <img className="footer__logo" src={Logo} alt="Logo AluraGeek" />
           <nav className="footer__links">
-            <a href="/" className="footer__link">
-              Quem somos nós
-            </a>
-            <a href="/" className="footer__link">
-              Política de privacidade
-            </a>
-            <a href="/" className="footer__link">
-              Programa de fidelidade
-            </a>
-            <a href="/" className="footer__link">
-              Nossas lojas
-            </a>
-            <a href="/" className="footer__link">
-              Quero ser franqueado
-            </a>
-            <a href="/" className="footer__link">
-              Anuncie aqui
-            </a>
+            <FooterLink href="/" children={"Quem somos nós"} />
+            <FooterLink href="/" children={"Política de privacidade"} />
+            <FooterLink href="/" children={"Programa de fidelidade"} />
+            <FooterLink href="/" children={"Nossas lojas"} />
+            <FooterLink href="/" children={"Quero ser franqueado"} />
+            <FooterLink href="/" children={"Anuncie aqui"} />
           </nav>
         </section>
         <form className="footer__form">
