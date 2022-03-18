@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <section className="footer__container">
         <section className="footer__content">
-          <img className="footer__logo" src={Logo} alt="Logo Alura" />
+          <img className="footer__logo" src={Logo} alt="Logo AluraGeek" />
           <nav className="footer__links">
             <a href="/" className="footer__link">
               Quem somos nós
