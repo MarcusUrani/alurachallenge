@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
-import MainBanner from "../../Components/MainBanner";
-import ProductList from "../../Components/ProductList";
+import MainBanner from "../../Components/mainBanner";
+import ProductList from "../../Components/productList";
 
 const Main = () => {
   return (

@@ -2,7 +2,7 @@ import React from "react";
 import "./style.css";
 import Logo from "../../Assets/images/Logo.png";
 import { TextField } from "@mui/material";
-import FooterLink from "../FooterLink";
+import FooterLink from "../footerLink";
 
 const Footer = () => {
   return (
