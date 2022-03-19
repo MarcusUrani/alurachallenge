@@ -56,3 +56,26 @@
 .product__item__link {
   color: #2a7ae4;
 }
+
+@media (max-width: 768px) {
+  .product__list {
+    width: 90%;
+  }
+
+  .product__item:nth-child(5),
+  .product__item:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 468px) {
+  .product__list__content {
+    flex-wrap: wrap;
+    gap: 5%;
+    width: 100%;
+  }
+
+  .product__item {
+    width: 47.5%;
+  }
+}

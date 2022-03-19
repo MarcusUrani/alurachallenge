@@ -18,9 +18,35 @@
 .main__button {
   background-color: #2a7ae4;
   color: #fff;
+  font-size: 0.875rem;
   padding: 1rem;
 }
 
 .main__button:hover {
   background-color: #5595e9;
+}
+
+@media (max-width: 768px) {
+  .main__banner__content {
+    padding: 8rem 0;
+    width: 90%;
+  }
+
+  .main__button {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .main__banner__content {
+    padding: 13rem 0;
+  }
+
+  .main__title {
+    font-size: 1.375rem;
+  }
+
+  .main__subtitle {
+    font-size: 0.875rem;
+  }
 }

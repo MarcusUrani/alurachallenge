@@ -2,9 +2,9 @@ import React from "react";
 import "./style.css";
 import MainBanner from "../../Components/mainBanner";
 import ProductList from "../../Components/productList";
-import StarWars from "../../star-wars.json";
-import Consoles from "../../consoles.json";
-import Miscelaneous from "../../miscelaneous.json";
+import StarWars from "../../Products/star-wars.json";
+import Consoles from "../../Products/consoles.json";
+import Miscelaneous from "../../Products/miscelaneous.json";
 
 const Main = () => {
   return (
