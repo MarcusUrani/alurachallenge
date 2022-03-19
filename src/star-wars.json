@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "image": "star_wars_1",
+        "alt":"Caneca de personagem Storm Trooper de Star Wars, na cor branca, apoiada a uma mesa da cor cinza e com uma mão a segurando.",
+        "name": "Produto XYZ",
+        "price": "60,00",
+        "slug": "/star-wars-1"
+    },
+    {
+        "id": "2",
+        "image": "star_wars_2",
+        "alt":"Dois personagens de Star Wars, ambos na cor preta, apoiados sobre uma mesa da cor vermelha.",
+        "name": "Produto XYZ",
+        "price": "60,00",
+        "slug": "/star-wars-2"
+    },
+    {
+        "id": "3",
+        "image": "star_wars_3",
+        "alt":"Boneco do mestre yoda de Star Wars, ele possui pele na cor verde e sua roupa é uma manta na cor bege. Ele está a frente de um fundo laranja.",
+        "name": "Produto XYZ",
+        "price": "60,00",
+        "slug": "/star-wars-3"
+    },
+    {
+        "id": "4",
+        "image": "star_wars_4",
+        "alt":"Storm Trooper de Star wars, na cor branca, segurando uma arma laser.",
+        "name": "Produto XYZ",
+        "price": "60,00",
+        "slug": "/star-wars-4"
+    },
+    {
+        "id": "5",
+        "image": "star_wars_5",
+        "alt":"Boneco do baby Yoda, personagem da série o mandaloriano, possui pele na cor verde, olhos grandes com a cor escura e orelhas pontudas.",
+        "name": "Produto XYZ",
+        "price": "60,00",
+        "slug": "/star-wars-5"
+    },
+    {
+        "id": "6",
+        "image": "star_wars_6",
+        "alt":"Personagem misterioso de star wars, vestido de preto, segurando um sabre de luz. Um Storm Trooper com a armadura na cor branca está ao fundo.",
+        "name": "Produto XYZ",
+        "price": "60,00",
+        "slug": "/star-wars-6"
+    }
+]

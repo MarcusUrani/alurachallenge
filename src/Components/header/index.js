@@ -25,7 +25,7 @@ const Header = () => {
           />
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            size="xl"
+            size="lg"
             className="header__search__icon"
           />
         </section>

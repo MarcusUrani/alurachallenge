@@ -23,7 +23,7 @@ header {
   border-radius: 1.25rem;
   font-size: 0.875rem;
   padding: 0.75rem 0.625rem;
-  width: 24.5625rem;
+  width: 200%;
 }
 
 .header__search::placeholder {
@@ -35,9 +35,9 @@ header {
 }
 
 .header__search__icon {
-  left: 90%;
+  left: 180%;
   position: absolute;
-  top: 0.5rem;
+  top: 0.6rem;
 }
 
 .header__login {

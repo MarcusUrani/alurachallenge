@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "image": "console_1",
+        "alt":"Controle do console XBox, na cor branca apoiado sobre uma mesa branca. Visto de cima.",
+        "name": "Console XYZ",
+        "price": "60,00",
+        "slug": "/console-1"
+    },
+    {
+        "id": "2",
+        "image": "console_2",
+        "alt":"Console Playstation 5, na cor branca, apoiado sobre uma mesa. Fundo na cor vermelha e iluminação azul.",
+        "name": "Controle e console XYZ",
+        "price": "60,00",
+        "slug": "/console-2"
+    },
+    {
+        "id": "3",
+        "image": "console_3",
+        "alt":"Console Super Nintendo com a escrita 'Nintendo Entertainment System'.",
+        "name": "Console XYZ",
+        "price": "60,00",
+        "slug": "/console-3"
+    },
+    {
+        "id": "4",
+        "image": "console_4",
+        "alt":"Controles do console Nintendo Switch, nas cores azul e vermelho, com o controle azul apoiado sobre o vermelho.",
+        "name": "Console XYZ",
+        "price": "60,00",
+        "slug": "/console-4"
+    },
+    {
+        "id": "5",
+        "image": "console_5",
+        "alt":"Console Xbox Series X, na cor preta, emfrente a um fundo verde.",
+        "name": "Console XYZ",
+        "price": "60,00",
+        "slug": "/console-5"
+    },
+    {
+        "id": "6",
+        "image": "console_6",
+        "alt":"Console Game Boy color apoiado sobre uma mesa branca, com 3 cartuchos de jogos ao seu lado.",
+        "name": "Game Boy Color",
+        "price": "60,00",
+        "slug": "/console-6"
+    }
+]

@@ -1,4 +1,6 @@
 .product__list {
+  display: flex;
+  flex-direction: column;
   margin: 4rem auto;
   width: 80%;
 }
@@ -7,6 +9,7 @@
   align-items: center;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .product__list__title {
@@ -21,4 +24,35 @@
   font-size: 1rem;
   font-weight: bold;
   gap: 0.75rem;
+}
+
+.product__list__content {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.product__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product__item__image {
+  width: 100%;
+}
+
+.product__item__title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.product__item__price,
+.product__item__link {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.product__item__link {
+  color: #2a7ae4;
 }
