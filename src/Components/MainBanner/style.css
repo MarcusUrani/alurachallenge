@@ -1,7 +1,12 @@
+.main__banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .main__banner__content {
   color: #fff;
   margin: 0 auto;
-  padding: 9.375rem 0;
   width: 80%;
 }
 
@@ -28,7 +33,7 @@
 
 @media (max-width: 768px) {
   .main__banner__content {
-    padding: 8rem 0;
+    /* padding: 8rem 0; */
     width: 90%;
   }
 
@@ -39,7 +44,7 @@
 
 @media (max-width: 576px) {
   .main__banner__content {
-    padding: 13rem 0;
+    /* padding: 15rem 0; */
   }
 
   .main__title {

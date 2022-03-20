@@ -23,12 +23,12 @@ const Header = () => {
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />
-          <FontAwesomeIcon
-            icon={faMagnifyingGlass}
-            size="lg"
-            className="header__search__icon"
-          />
         </section>
+        <FontAwesomeIcon
+          icon={faMagnifyingGlass}
+          size="lg"
+          className="header__search__icon"
+        />
       </section>
       <Link className="header__login" to={"/"}>
         Login

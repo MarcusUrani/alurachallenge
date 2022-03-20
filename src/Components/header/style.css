@@ -4,6 +4,7 @@ header {
   justify-content: space-between;
   margin: 0 auto;
   padding: 2.34375rem 0;
+  position: relative;
   width: 80%;
 }
 .header__container {
@@ -11,10 +12,6 @@ header {
   display: flex;
   gap: 1.875rem;
   justify-content: space-between;
-}
-
-.header__search__container {
-  position: relative;
 }
 
 .header__search {
@@ -35,9 +32,9 @@ header {
 }
 
 .header__search__icon {
-  left: 180%;
   position: absolute;
-  top: 0.6rem;
+  top: center;
+  left: 33rem;
 }
 
 .header__login {
@@ -58,7 +55,7 @@ header {
   }
 
   .header__container {
-    gap: 0;
+    gap: 1rem;
   }
 
   .header__logo {
@@ -71,14 +68,14 @@ header {
   }
 
   .header__search__icon {
-    left: 100%;
+    left: 20.5rem;
   }
 }
 
 @media (max-width: 600px) {
   header {
     justify-content: flex-start;
-    gap: 2.21875rem;
+    gap: 1.7rem;
   }
 
   .header__logo {
@@ -90,8 +87,11 @@ header {
   }
 
   .header__search__icon {
-    top: -0.5rem;
-    left: 20rem;
+    left: 19rem;
+  }
+
+  .header__login {
+    padding: 1rem 2rem;
   }
 }
 

@@ -11,8 +11,9 @@ const MainBanner = () => {
         backgroundImage: `url(${HomeBanner})`,
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        backgroundClip: "border-box",
         backgroundSize: "cover",
-        height: "60vh",
+        height: "65vh",
       }}
     >
       <section className="main__banner__content">
