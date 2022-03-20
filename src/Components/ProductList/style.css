@@ -76,6 +76,7 @@
   }
 
   .product__item {
+    margin-bottom: 1rem;
     width: 47.5%;
   }
 }
