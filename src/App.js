@@ -4,6 +4,7 @@ import Header from "./Components/header";
 import Footer from "./Components/footer";
 import Main from "./Pages/Main";
 import Login from "./Pages/Login";
+import ItemDescription from "./Pages/ItemDescription";
 
 function App() {
   return (
@@ -11,9 +12,8 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<Main />} />
-      </Routes>
-      <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/:slug/:slug" element={<ItemDescription />} />
       </Routes>
       <Footer />
     </Router>

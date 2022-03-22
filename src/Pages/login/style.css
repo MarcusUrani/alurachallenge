@@ -25,3 +25,15 @@
 .main__login__button:hover {
   background-color: #5595e9;
 }
+
+@media (max-width: 768px) {
+  .main__login__container {
+    width: 50%;
+  }
+}
+
+@media (max-width: 500px) {
+  .main__login__container {
+    width: 75%;
+  }
+}

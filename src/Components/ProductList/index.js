@@ -26,7 +26,7 @@ const ProductList = ({ title, products, slug }) => {
             />
             <h3 className="product__item__title">{product.name}</h3>
             <p className="product__item__price">R$ {product.price}</p>
-            <Link to={`${slug}${product.slug}`} className="product__item__link">
+            <Link to={`${slug}${product.id}`} className="product__item__link">
               Ver produto
             </Link>
           </section>

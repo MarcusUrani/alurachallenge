@@ -13,13 +13,13 @@ const Main = () => {
       <ProductList
         title={"Star Wars"}
         products={StarWars}
-        slug={"/star-wars"}
+        slug={"/star-wars/"}
       />
-      <ProductList title={"Consoles"} products={Consoles} slug={"/consoles"} />
+      <ProductList title={"Consoles"} products={Consoles} slug={"/consoles/"} />
       <ProductList
         title={"Diversos"}
         products={Miscelaneous}
-        slug={"/miscelaneous"}
+        slug={"/miscelaneous/"}
       />
     </main>
   );
