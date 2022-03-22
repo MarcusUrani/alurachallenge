@@ -1,0 +1,19 @@
+.main__item {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.main__item__container {
+  width: 50%;
+}
+
+.main__item__image {
+  width: 100%;
+}
+
+.main__item__content {
+  width: 50%;
+}

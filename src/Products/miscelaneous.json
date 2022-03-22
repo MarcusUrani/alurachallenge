@@ -2,49 +2,49 @@
     {
         "id": "7",
         "image": "miscelaneous_1",
+        "miniature": "miscelaneous_1_miniature",
         "alt":"Camisa estendida, na cor branca, um pouco amarrotada, com o símbolo da Atari no centro, em vermelho e com o nome Atari escrito em Japonês abaixo.",
         "name": "Camisa Atari",
-        "price": "60,00",
-        "slug": "/miscelaneous-1"
+        "price": "60,00"
     },
     {
         "id": "8",
         "image": "miscelaneous_2",
+        "miniature": "miscelaneous_2_miniature",
         "alt":"Pessoa jogado video game, vestindo uma camisa cinza com o controle do Super Nintendo estampado nela.",
         "name": "Camisa SNES",
-        "price": "60,00",
-        "slug": "/miscelaneous-2"
+        "price": "60,00"
     },
     {
         "id": "9",
         "image": "miscelaneous_3",
+        "miniature": "miscelaneous_3_miniature",
         "alt":"Boneco do Sonic, que possui pelo na cor azul e pele na cor amarelada, em frente a um fundo azul e a um boneco da personagem Tails, que está desfocada.",
         "name": "Controle e console XYZ",
-        "price": "60,00",
-        "slug": "/miscelaneous-3"
+        "price": "60,00"
     },
     {
         "id": "10",
         "image": "miscelaneous_4",
+        "miniature": "miscelaneous_4_miniature",
         "alt":"Despertador, na cor rosa, marcando o horário 04:20 em frente a um fundo azul.",
         "name": "Controle e console XYZ",
-        "price": "60,00",
-        "slug": "/miscelaneous-4"
+        "price": "60,00"
     },
     {
         "id": "11",
         "image": "miscelaneous_5",
+        "miniature": "miscelaneous_5_miniature",
         "alt":"Homem utilizando um óculos de realidade virtual, em seu quarto, vestindo uma camisa de mangas compridas com o torso na cor branca e as mangas na cor preta.",
         "name": "Controle e console XYZ",
-        "price": "60,00",
-        "slug": "/miscelaneous-5"
+        "price": "60,00"
     },
     {
         "id": "12",
         "image": "miscelaneous_6",
+        "miniature": "miscelaneous_6_miniature",
         "alt":"Pessoa fantasiada de Pikachu, personagem de Pokémon, que é na cor amarela e tem bolas na bochecha na cor vermelha.",
         "name": "Controle e console XYZ",
-        "price": "60,00",
-        "slug": "/miscelaneous-6"
+        "price": "60,00"
     }
 ]

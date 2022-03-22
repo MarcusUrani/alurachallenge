@@ -10,17 +10,9 @@ const Main = () => {
   return (
     <main>
       <MainBanner />
-      <ProductList
-        title={"Star Wars"}
-        products={StarWars}
-        slug={"/star-wars/"}
-      />
-      <ProductList title={"Consoles"} products={Consoles} slug={"/consoles/"} />
-      <ProductList
-        title={"Diversos"}
-        products={Miscelaneous}
-        slug={"/miscelaneous/"}
-      />
+      <ProductList title={"Star Wars"} products={StarWars} />
+      <ProductList title={"Consoles"} products={Consoles} />
+      <ProductList title={"Diversos"} products={Miscelaneous} />
     </main>
   );
 };
