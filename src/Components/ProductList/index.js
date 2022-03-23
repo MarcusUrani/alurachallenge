@@ -26,7 +26,13 @@ const ProductList = ({ title, products }) => {
             />
             <h3 className="product__item__title">{product.name}</h3>
             <p className="product__item__price">R$ {product.price}</p>
-            <Link to={`/product/${product.id}`} className="product__item__link">
+            <Link
+              to={`/product/${product.id}`}
+              className="product__item__link"
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
               Ver produto
             </Link>
           </section>
