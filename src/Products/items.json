@@ -2,6 +2,7 @@
     {
         "id": "1",
         "image": "console_1",
+        "tag": "#111111",
         "miniature": "console_1_miniature",
         "alt":"Controle do console XBox, na cor branca apoiado sobre uma mesa branca. Visto de cima.",
         "name": "Console XYZ",
@@ -11,6 +12,7 @@
     {
         "id": "2",
         "image": "console_2",
+        "tag": "#111111",
         "miniature": "console_2_miniature",
         "alt":"Console Playstation 5, na cor branca, apoiado sobre uma mesa. Fundo na cor vermelha e iluminação azul.",
         "name": "Controle e console XYZ",
@@ -20,6 +22,7 @@
     {
         "id": "3",
         "image": "console_3",
+        "tag": "#111111",
         "miniature": "console_3_miniature",
         "alt":"Console Super Nintendo com a escrita 'Nintendo Entertainment System'.",
         "name": "Console XYZ",
@@ -29,6 +32,7 @@
     {
         "id": "4",
         "image": "console_4",
+        "tag": "#111111",
         "miniature": "console_4_miniature",
         "alt":"Controles do console Nintendo Switch, nas cores azul e vermelho, com o controle azul apoiado sobre o vermelho.",
         "name": "Console XYZ",
@@ -38,6 +42,7 @@
     {
         "id": "5",
         "image": "console_5",
+        "tag": "#111111",
         "miniature": "console_5_miniature",
         "alt":"Console Xbox Series X, na cor preta, emfrente a um fundo verde.",
         "name": "Console XYZ",
@@ -47,6 +52,7 @@
     {
         "id": "6",
         "image": "console_6",
+        "tag": "#111111",
         "miniature": "console_6_miniature",
         "alt":"Console Game Boy color apoiado sobre uma mesa branca, com 3 cartuchos de jogos ao seu lado.",
         "name": "Game Boy Color",
@@ -56,6 +62,7 @@
     {
         "id": "7",
         "image": "miscelaneous_1",
+        "tag": "#111111",
         "miniature": "miscelaneous_1_miniature",
         "alt":"Camisa estendida, na cor branca, um pouco amarrotada, com o símbolo da Atari no centro, em vermelho e com o nome Atari escrito em Japonês abaixo.",
         "name": "Camisa Atari",
@@ -65,6 +72,7 @@
     {
         "id": "8",
         "image": "miscelaneous_2",
+        "tag": "#111111",
         "miniature": "miscelaneous_2_miniature",
         "alt":"Pessoa jogado video game, vestindo uma camisa cinza com o controle do Super Nintendo estampado nela.",
         "name": "Camisa SNES",
@@ -74,6 +82,7 @@
     {
         "id": "9",
         "image": "miscelaneous_3",
+        "tag": "#111111",
         "miniature": "miscelaneous_3_miniature",
         "alt":"Boneco do Sonic, que possui pelo na cor azul e pele na cor amarelada, em frente a um fundo azul e a um boneco da personagem Tails, que está desfocada.",
         "name": "Controle e console XYZ",
@@ -83,6 +92,7 @@
     {
         "id": "10",
         "image": "miscelaneous_4",
+        "tag": "#111111",
         "miniature": "miscelaneous_4_miniature",
         "alt":"Despertador, na cor rosa, marcando o horário 04:20 em frente a um fundo azul.",
         "name": "Controle e console XYZ",
@@ -92,6 +102,7 @@
     {
         "id": "11",
         "image": "miscelaneous_5",
+        "tag": "#111111",
         "miniature": "miscelaneous_5_miniature",
         "alt":"Homem utilizando um óculos de realidade virtual, em seu quarto, vestindo uma camisa de mangas compridas com o torso na cor branca e as mangas na cor preta.",
         "name": "Controle e console XYZ",
@@ -101,6 +112,7 @@
     {
         "id": "12",
         "image": "miscelaneous_6",
+        "tag": "#111111",
         "miniature": "miscelaneous_6_miniature",
         "alt":"Pessoa fantasiada de Pikachu, personagem de Pokémon, que é na cor amarela e tem bolas na bochecha na cor vermelha.",
         "name": "Controle e console XYZ",
@@ -110,6 +122,7 @@
     {
         "id": "13",
         "image": "star_wars_1",
+        "tag": "#111111",
         "miniature": "star_wars_1_miniature",
         "alt":"Caneca de personagem Storm Trooper de Star Wars, na cor branca, apoiada a uma mesa da cor cinza e com uma mão a segurando.",
         "name": "Produto XYZ",
@@ -119,6 +132,7 @@
     {
         "id": "14",
         "image": "star_wars_2",
+        "tag": "#111111",
         "miniature": "star_wars_2_miniature",
         "alt":"Dois personagens de Star Wars, ambos na cor preta, apoiados sobre uma mesa da cor vermelha.",
         "name": "Produto XYZ",
@@ -128,6 +142,7 @@
     {
         "id": "15",
         "image": "star_wars_3",
+        "tag": "#111111",
         "miniature": "star_wars_3_miniature",
         "alt":"Boneco do mestre yoda de Star Wars, ele possui pele na cor verde e sua roupa é uma manta na cor bege. Ele está a frente de um fundo laranja.",
         "name": "Produto XYZ",
@@ -137,6 +152,7 @@
     {
         "id": "16",
         "image": "star_wars_4",
+        "tag": "#111111",
         "miniature": "star_wars_4_miniature",
         "alt":"Storm Trooper de Star wars, na cor branca, segurando uma arma laser.",
         "name": "Produto XYZ",
@@ -146,6 +162,7 @@
     {
         "id": "17",
         "image": "star_wars_5",
+        "tag": "#111111",
         "miniature": "star_wars_5_miniature",
         "alt":"Boneco do baby Yoda, personagem da série o mandaloriano, possui pele na cor verde, olhos grandes com a cor escura e orelhas pontudas.",
         "name": "Produto XYZ",
@@ -155,6 +172,7 @@
     {
         "id": "18",
         "image": "star_wars_6",
+        "tag": "#111111",
         "miniature": "star_wars_6_miniature",
         "alt":"Personagem misterioso de star wars, vestido de preto, segurando um sabre de luz. Um Storm Trooper com a armadura na cor branca está ao fundo.",
         "name": "Produto XYZ",

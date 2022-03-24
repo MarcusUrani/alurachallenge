@@ -1,0 +1,13 @@
+.product__container {
+  width: 15%;
+}
+
+.product__miniature {
+  width: 100%;
+}
+
+.product__icons {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+}

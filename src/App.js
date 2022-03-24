@@ -5,6 +5,7 @@ import Footer from "./Components/footer";
 import Main from "./Pages/Main";
 import Login from "./Pages/Login";
 import ItemDescription from "./Pages/ItemDescription";
+import AddNewItem from "./Pages/AddNewItem";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" exact element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/:slug/:slug" element={<ItemDescription />} />
+        <Route path="/manage-items" element={<AddNewItem />} />
       </Routes>
       <Footer />
     </Router>
