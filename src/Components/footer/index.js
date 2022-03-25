@@ -16,7 +16,7 @@ const Footer = () => {
             <FooterLink href="/" children={"Programa de fidelidade"} />
             <FooterLink href="/" children={"Nossas lojas"} />
             <FooterLink href="/" children={"Quero ser franqueado"} />
-            <FooterLink href="/" children={"Anuncie aqui"} />
+            <FooterLink href="/login" children={"Anuncie aqui"} />
           </nav>
         </section>
         <form className="footer__form">

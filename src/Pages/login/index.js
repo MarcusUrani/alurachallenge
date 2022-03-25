@@ -22,7 +22,7 @@ const Login = () => {
           variant="filled"
           id="fullWidth"
         />
-        <Link to={"/"} className="main__login__button">
+        <Link to={"/manage-items"} className="main__login__button">
           Entrar
         </Link>
       </section>
