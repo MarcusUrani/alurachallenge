@@ -41,3 +41,18 @@
   justify-content: space-between;
   width: 100%;
 }
+
+@media (max-width: 768px) {
+  .main__manage__container {
+    width: 90%;
+  }
+
+  .main__manage__title {
+    font-size: 1.375rem;
+  }
+
+  .main__manage__button {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}

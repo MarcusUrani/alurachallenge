@@ -1,7 +1,6 @@
 import React from "react";
 import "./style.css";
-import { faPencil, faTrash } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { DeleteSharp, Edit } from "@mui/icons-material";
 
 const Product = ({ name, price, tag, miniature }) => {
   return (
@@ -12,8 +11,8 @@ const Product = ({ name, price, tag, miniature }) => {
           src={`/assets/images/${miniature}.png`}
         />
         <section className="product__icons">
-          <FontAwesomeIcon icon={faPencil} className="product__edit__icon" />
-          <FontAwesomeIcon icon={faTrash} className="product__trash__icon" />
+          <DeleteSharp sx={{ color: "#fff", cursor: "pointer" }} />
+          <Edit sx={{ color: "#fff", cursor: "pointer" }} />
         </section>
       </section>
       <article className="product__content">
