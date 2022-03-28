@@ -22,7 +22,17 @@ const Login = () => {
           variant="filled"
           id="fullWidth"
         />
-        <Link to={"/manage-items"} className="main__login__button">
+        <Link
+          to={"/manage-items"}
+          className="main__login__button"
+          onClick={() => {
+            window.scroll({
+              top: 0,
+              left: 0,
+              behavior: "smooth",
+            });
+          }}
+        >
           Entrar
         </Link>
       </section>
