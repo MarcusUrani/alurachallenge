@@ -8,7 +8,9 @@ const ProductList = ({ title, products }) => {
   return (
     <section className="product__list">
       <section className="product__list__header">
-        <h2 className="product__list__title">{title}</h2>
+        <h2 className="product__list__title" id={title}>
+          {title}
+        </h2>
         <nav className="product__list__nav">
           <Link to={`/product`} className="product__list__link">
             Ver tudo
@@ -30,7 +32,11 @@ const ProductList = ({ title, products }) => {
               to={`/product/${product.id}`}
               className="product__item__link"
               onClick={() => {
-                window.scrollTo(0, 0);
+                window.scroll({
+                  top: 0,
+                  left: 0,
+                  behavior: "smooth",
+                });
               }}
             >
               Ver produto

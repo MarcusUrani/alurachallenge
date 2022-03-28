@@ -21,9 +21,17 @@ const MainBanner = () => {
         <h2 className="main__subtitle">
           Produtos selecionados com 33% de desconto
         </h2>
-        <Link to={"/"} className="main__button">
+        <a
+          className="main__button"
+          onClick={() => {
+            window.scrollTo({
+              top: document.querySelector("#Consoles").offsetTop,
+              behavior: "smooth",
+            });
+          }}
+        >
           Ver consoles
-        </Link>
+        </a>
       </section>
     </section>
   );

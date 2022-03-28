@@ -17,6 +17,9 @@ const Header = () => {
             alt="Logo da Alura geek que apresenta um controle de videogame com a cor azul 4 botões na esquerda, 4 botões na direita e 2 direcionais, todos na cor preta, ao lado do controle é apresentado o nome da empresa: AluraGeek"
             onClick={() => {
               window.scrollTo(0, 0);
+              window.scroll({
+                behavior: "smooth",
+              });
             }}
           />
         </Link>
@@ -35,7 +38,16 @@ const Header = () => {
           className="header__search__icon"
         />
       </section>
-      <Link className="header__login" to={"/login"}>
+      <Link
+        className="header__login"
+        to={"/login"}
+        onClick={() => {
+          window.scrollTo(0, 0);
+          window.scroll({
+            behavior: "smooth",
+          });
+        }}
+      >
         Login
       </Link>
     </header>

@@ -23,6 +23,7 @@
 .main__button {
   background-color: #2a7ae4;
   color: #fff;
+  cursor: pointer;
   font-size: 0.875rem;
   padding: 1rem;
 }
@@ -43,10 +44,6 @@
 }
 
 @media (max-width: 576px) {
-  .main__banner__content {
-    /* padding: 15rem 0; */
-  }
-
   .main__title {
     font-size: 1.375rem;
   }
