@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ProductSection from "../productSection";
+import fetchApi from "../../api";
 
-const ProductList = ({ title, products }) => {
+const ProductList = ({ title, fetchApiUrl, items }) => {
+  const [products, setProducts] = useState([]);
+
+  const fetchData = async () => {
+    const data = await fetchApi(fetchApiUrl);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    setProducts([]);
+    fetchData();
+  }, [fetchApiUrl]);
+
+  useEffect(() => {
+    setProducts(items);
+  }, [items]);
+
   return (
     <section className="product__list">
       <section className="product__list__header">
@@ -19,30 +37,13 @@ const ProductList = ({ title, products }) => {
         </nav>
       </section>
       <section className="product__list__content">
-        {products.map((product) => (
-          <section className="product__item" key={product.id}>
-            <img
-              src={`/assets/images/${product.miniature}.png`}
-              alt={product.alt}
-              className="product__item__image"
-            />
-            <h3 className="product__item__title">{product.name}</h3>
-            <p className="product__item__price">R$ {product.price}</p>
-            <Link
-              to={`/product/${product.id}`}
-              className="product__item__link"
-              onClick={() => {
-                window.scroll({
-                  top: 0,
-                  left: 0,
-                  behavior: "smooth",
-                });
-              }}
-            >
-              Ver produto
-            </Link>
-          </section>
-        ))}
+        {products ? (
+          products.map((product) => (
+            <ProductSection key={product.id} product={product} />
+          ))
+        ) : (
+          <section className="loading">Carregando...</section>
+        )}
       </section>
     </section>
   );
