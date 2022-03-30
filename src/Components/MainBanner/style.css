@@ -5,7 +5,7 @@
 }
 
 .main__banner__content {
-  color: #fff;
+  color: var(--white);
   margin: 0 auto;
   width: 80%;
 }
@@ -21,15 +21,15 @@
 }
 
 .main__button {
-  background-color: #2a7ae4;
-  color: #fff;
+  background-color: var(--blue);
+  color: var(--white);
   cursor: pointer;
   font-size: 0.875rem;
   padding: 1rem;
 }
 
 .main__button:hover {
-  background-color: #5595e9;
+  background-color: var(--light-blue);
 }
 
 @media (max-width: 768px) {

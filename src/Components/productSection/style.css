@@ -1,0 +1,38 @@
+.product__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product__item__image {
+  width: 100%;
+}
+
+.product__item__title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.product__item__price,
+.product__item__link {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.product__item__link {
+  color: var(--blue);
+}
+
+@media (max-width: 768px) {
+  .product__item:nth-child(5),
+  .product__item:nth-child(6) {
+    display: none;
+  }
+}
+
+@media (max-width: 468px) {
+  .product__item {
+    margin-bottom: 1rem;
+    width: 47.5%;
+  }
+}

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import "./style.css";
 import Product from "../../Components/product";
 import fetchApi from "../../api";
-import "./style.css";
+import Loading from "../../Components/loading";
 
 const AddNewItem = () => {
   const [items, setItems] = useState([]);
@@ -34,7 +35,7 @@ const AddNewItem = () => {
               />
             ))
           ) : (
-            <section className="loading">Carregando...</section>
+            <Loading />
           )}
         </section>
       </section>

@@ -1,5 +1,5 @@
 footer {
-  background-color: #eaf2fd;
+  background-color: var(--lighter-blue);
   bottom: 0;
   width: 100%;
 }
@@ -39,9 +39,9 @@ footer {
 }
 
 .form__button {
-  background-color: #2a7ae4;
+  background-color: var(--blue);
   border: none;
-  color: #ffffff;
+  color: var(--white);
   cursor: pointer;
   font-size: 1rem;
   padding: 1.5rem;
@@ -49,11 +49,11 @@ footer {
 }
 
 .form__button:hover {
-  background-color: #5595e9;
+  background-color: var(--light-blue);
 }
 
 .footer__copyright {
-  background-color: #ffffff;
+  background-color: var(--white);
   font-size: 1rem;
   font-weight: 500;
   padding: 2rem;

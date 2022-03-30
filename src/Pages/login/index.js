@@ -1,12 +1,13 @@
 import React from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const navigate = useNavigate();
   return (
     <main className="main__login">
-      <section className="main__login__container">
+      <form className="main__login__container">
         <h2 className="main__login__title">Iniciar Sessão</h2>
         <TextField
           sx={{}}
@@ -14,6 +15,7 @@ const Login = () => {
           fullWidth
           variant="filled"
           id="fullWidth"
+          required
         />
         <TextField
           sx={{}}
@@ -21,11 +23,13 @@ const Login = () => {
           fullWidth
           variant="filled"
           id="fullWidth"
+          required
         />
-        <Link
-          to={"/manage-items"}
+        <button
           className="main__login__button"
-          onClick={() => {
+          onClick={(event) => {
+            event.preventDefault();
+            navigate("/manage-items");
             window.scroll({
               top: 0,
               left: 0,
@@ -34,8 +38,8 @@ const Login = () => {
           }}
         >
           Entrar
-        </Link>
-      </section>
+        </button>
+      </form>
     </main>
   );
 };

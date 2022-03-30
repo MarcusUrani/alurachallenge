@@ -1,3 +1,13 @@
+:root {
+  --blue: #2a7ae4;
+  --grey: #a2a2a2;
+  --ice-white: #d4e4fa;
+  --light-blue: #5595e9;
+  --light-grey: #f5f5f5;
+  --lighter-blue: #eaf2fd;
+  --white: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
@@ -6,7 +16,7 @@
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--white);
   margin: 0;
   overflow-x: hidden;
   padding: 0;

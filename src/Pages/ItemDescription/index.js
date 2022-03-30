@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import InternDescription from "../../Components/internDescription";
 import ProductList from "../../Components/productList";
 import fetchApi from "../../api";
+import Loading from "../../Components/loading";
 
 const ItemDescription = () => {
   const params = useParams();
@@ -17,11 +18,7 @@ const ItemDescription = () => {
     setProducts(data);
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [itemId]);
-
-  useEffect(() => {
+  const getSimilarItems = () => {
     if (itemId > 11) {
       const newArray = products.slice(itemId - 6, itemId);
       setSimilarItems(newArray);
@@ -32,20 +29,26 @@ const ItemDescription = () => {
       const newArray = products.slice(params.slug, itemId + 7);
       setSimilarItems(newArray);
     }
+  };
+
+  useEffect(() => {
+    fetchData();
+    getSimilarItems();
   }, [itemId]);
 
   return (
     <main className="main__description">
-      {item ? <InternDescription item={item} /> : <div>Carregando...</div>}
-
       {similarItems && item ? (
-        <ProductList
-          title={"Produtos similares"}
-          fetchApiUrl={`${item.slug}`}
-          items={similarItems}
-        />
+        <>
+          <InternDescription item={item} />
+          <ProductList
+            title={"Produtos similares"}
+            fetchApiUrl={`${item.slug}`}
+            items={similarItems}
+          />
+        </>
       ) : (
-        <section className="loading">Carregando...</section>
+        <Loading />
       )}
     </main>
   );

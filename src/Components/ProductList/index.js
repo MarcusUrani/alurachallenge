@@ -5,6 +5,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductSection from "../productSection";
 import fetchApi from "../../api";
+import Loading from "../loading";
 
 const ProductList = ({ title, fetchApiUrl, items }) => {
   const [products, setProducts] = useState([]);
@@ -42,7 +43,7 @@ const ProductList = ({ title, fetchApiUrl, items }) => {
             <ProductSection key={product.id} product={product} />
           ))
         ) : (
-          <section className="loading">Carregando...</section>
+          <Loading />
         )}
       </section>
     </section>
