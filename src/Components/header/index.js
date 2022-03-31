@@ -4,11 +4,12 @@ import Logo from "../../Assets/images/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
+import SearchList from "../searchList";
 
 const Header = ({ data }) => {
   const [searchValue, setSearchValue] = useState("");
   const [newArray, setNewArray] = useState([]);
-  const [disabled, setDisabled] = useState("none");
+  const [disabled, setDisabled] = useState("block");
 
   const handleSearchItem = () => {
     setNewArray(data.filter((item) => item.name.includes(searchValue)));
@@ -46,7 +47,7 @@ const Header = ({ data }) => {
             style={{ display: `${disabled}` }}
           >
             {newArray.length > 0 ? (
-              <h1></h1>
+              newArray.map((item) => <SearchList item={item} />)
             ) : (
               <span>Nenhum resultado encontrado</span>
             )}
