@@ -7,16 +7,11 @@ import "./style.css";
 
 const Header = ({ data }) => {
   const [searchValue, setSearchValue] = useState("");
+  const [newArray, setNewArray] = useState([]);
   const [disabled, setDisabled] = useState("none");
 
   const handleSearchItem = () => {
-    for (let i = 0; i < data.length; i++) {
-      let itemName = data[i].name;
-      let expresion = new RegExp(searchValue, "i");
-      if (expresion.test(itemName)) {
-        console.log("encontrado:" + itemName);
-      }
-    }
+    setNewArray(data.filter((item) => item.name.includes(searchValue)));
   };
 
   return (
@@ -46,12 +41,17 @@ const Header = ({ data }) => {
               handleSearchItem();
             }}
           />
+          <section
+            className="header__search__span"
+            style={{ display: `${disabled}` }}
+          >
+            {newArray.length > 0 ? (
+              <h1></h1>
+            ) : (
+              <span>Nenhum resultado encontrado</span>
+            )}
+          </section>
         </section>
-        <FontAwesomeIcon
-          icon={faMagnifyingGlass}
-          size="lg"
-          className="header__search__icon"
-        />
       </section>
       <Link
         className="header__login"
@@ -65,6 +65,11 @@ const Header = ({ data }) => {
       >
         Login
       </Link>
+      <FontAwesomeIcon
+        icon={faMagnifyingGlass}
+        size="lg"
+        className="header__search__icon"
+      />
     </header>
   );
 };

@@ -4,7 +4,6 @@ header {
   justify-content: space-between;
   margin: 0 auto;
   padding: 2.34375rem 0;
-  position: relative;
   width: 80%;
 }
 .header__container {
@@ -23,18 +22,20 @@ header {
   width: 200%;
 }
 
+.header__search__container {
+  position: relative;
+}
+
+.header__search__icon {
+  display: none;
+}
+
 .header__search::placeholder {
   color: var(--grey);
 }
 
 .header__search:focus {
   outline: none;
-}
-
-.header__search__icon {
-  position: absolute;
-  top: center;
-  left: 33rem;
 }
 
 .header__login {
@@ -68,7 +69,7 @@ header {
   }
 
   .header__search__icon {
-    left: 20.5rem;
+    display: block;
   }
 }
 
