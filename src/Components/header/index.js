@@ -5,8 +5,20 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 
-const Header = () => {
+const Header = ({ data }) => {
   const [searchValue, setSearchValue] = useState("");
+  const [disabled, setDisabled] = useState("none");
+
+  const handleSearchItem = () => {
+    for (let i = 0; i < data.length; i++) {
+      let itemName = data[i].name;
+      let expresion = new RegExp(searchValue, "i");
+      if (expresion.test(itemName)) {
+        console.log("encontrado:" + itemName);
+      }
+    }
+  };
+
   return (
     <header>
       <section className="header__container">
@@ -29,7 +41,10 @@ const Header = () => {
             className="header__search"
             placeholder="O que deseja encontrar?"
             value={searchValue}
-            onChange={(event) => setSearchValue(event.target.value)}
+            onChange={(event) => {
+              setSearchValue(event.target.value);
+              handleSearchItem();
+            }}
           />
         </section>
         <FontAwesomeIcon

@@ -6,11 +6,24 @@ import Main from "./Pages/Main";
 import Login from "./Pages/Login";
 import ItemDescription from "./Pages/ItemDescription";
 import AddNewItem from "./Pages/AddNewItem";
+import fetchApi from "./api";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [data, setData] = useState([]);
+
+  const fetchItems = async () => {
+    const items = await fetchApi("items");
+    setData(items);
+  };
+
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
   return (
     <Router>
-      <Header />
+      <Header data={data} />
       <Routes>
         <Route path="/" exact element={<Main />} />
         <Route path="/login" element={<Login />} />
