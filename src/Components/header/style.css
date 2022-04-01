@@ -73,21 +73,31 @@ header {
 
   .header__logo {
     margin-right: -3rem;
-    width: 40%;
+    width: 70%;
   }
 
   .header__search {
-    width: 120%;
+    width: 135%;
   }
 
-  .header__search__icon {
-    display: block;
+  .header__search__span {
+    width: 115%;
+  }
+
+  .header__login {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 0;
   }
 }
 
 @media (max-width: 600px) {
   header {
-    justify-content: flex-start;
+    justify-content: space-between;
     gap: 1.7rem;
   }
 
@@ -100,16 +110,6 @@ header {
   }
 
   .header__search__icon {
-    left: 19rem;
-  }
-
-  .header__login {
-    padding: 1rem 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  header {
-    padding: 1rem 0;
+    display: block;
   }
 }
