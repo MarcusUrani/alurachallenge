@@ -1,0 +1,26 @@
+.search__item {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.search__item__container {
+    align-items: center;
+    display: flex;
+    gap: .5rem
+}
+
+.search__item__image {
+    margin-bottom: .7rem;
+    width: 35%;
+}
+
+.search__item__info {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.search__item__title {
+    font-size: .85rem;
+    font-weight: bold;
+}

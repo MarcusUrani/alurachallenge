@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../Assets/images/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -13,7 +13,21 @@ const Header = ({ data }) => {
 
   const handleSearchItem = () => {
     setNewArray(data.filter((item) => item.name.includes(searchValue)));
+    setDisabled("block");
   };
+
+  const handleTop = () => {
+    window.scrollTo(0, 0);
+    window.scroll({
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    if (searchValue === "") {
+      setDisabled("none");
+    }
+  }, [searchValue]);
 
   return (
     <header>
@@ -24,10 +38,7 @@ const Header = ({ data }) => {
             src={Logo}
             alt="Logo da Alura geek que apresenta um controle de videogame com a cor azul 4 botões na esquerda, 4 botões na direita e 2 direcionais, todos na cor preta, ao lado do controle é apresentado o nome da empresa: AluraGeek"
             onClick={() => {
-              window.scrollTo(0, 0);
-              window.scroll({
-                behavior: "smooth",
-              });
+              handleTop();
             }}
           />
         </Link>
@@ -47,7 +58,19 @@ const Header = ({ data }) => {
             style={{ display: `${disabled}` }}
           >
             {newArray.length > 0 ? (
-              newArray.map((item) => <SearchList item={item} />)
+              newArray.map((item) => (
+                <Link
+                  className="search__item"
+                  to={`/product/${item.id}`}
+                  onClick={() => {
+                    setDisabled("none");
+                    setSearchValue("");
+                    handleTop();
+                  }}
+                >
+                  <SearchList item={item} />
+                </Link>
+              ))
             ) : (
               <span>Nenhum resultado encontrado</span>
             )}
@@ -58,10 +81,7 @@ const Header = ({ data }) => {
         className="header__login"
         to={"/login"}
         onClick={() => {
-          window.scrollTo(0, 0);
-          window.scroll({
-            behavior: "smooth",
-          });
+          handleTop();
         }}
       >
         Login

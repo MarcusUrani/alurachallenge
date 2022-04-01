@@ -38,6 +38,18 @@ header {
   outline: none;
 }
 
+.header__search__span {
+  background-color: var(--light-grey);
+  border-radius: 0 0 1.25rem 1.25rem;
+  display: flex;
+  position: absolute;
+  left: 1rem;
+  max-height: 50vh;
+  overflow-y: scroll;
+  padding: 1rem;
+  width: 181%;
+}
+
 .header__login {
   border: var(--blue) solid 0.0625rem;
   color: var(--blue);

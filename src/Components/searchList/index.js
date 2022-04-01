@@ -4,16 +4,17 @@ import { Link } from "react-router-dom";
 
 const SearchList = ({ item }) => {
   return (
-    <Link className="search__item" to={item.slug}>
-      <section className="search__item__container">
-        <img
-          src={`/assets/images/${item.miniature}.png`}
-          alt={item.alt}
-          className="search__item__image"
-        />
+    <section className="search__item__container">
+      <img
+        src={`/assets/images/${item.miniature}.png`}
+        alt={item.alt}
+        className="search__item__image"
+      />
+      <article className="search__item__info">
         <p className="search__item__title">{item.name}</p>
-      </section>
-    </Link>
+        <p className="search__item__price">R$ {item.price}</p>
+      </article>
+    </section>
   );
 };
 
