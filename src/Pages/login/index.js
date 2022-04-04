@@ -27,6 +27,7 @@ const Login = () => {
         />
         <button
           className="main__login__button"
+          type="submit"
           onClick={(event) => {
             event.preventDefault();
             navigate("/manage-items");

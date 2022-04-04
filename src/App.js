@@ -8,6 +8,7 @@ import ItemDescription from "./Pages/ItemDescription";
 import AddNewItem from "./Pages/AddNewItem";
 import fetchApi from "./api";
 import { useEffect, useState } from "react";
+import NewProduct from "./Pages/NewProduct";
 
 function App() {
   const [data, setData] = useState([]);
@@ -29,6 +30,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/:slug/:slug" element={<ItemDescription />} />
         <Route path="/manage-items" element={<AddNewItem />} />
+        <Route path="/new-product" element={<NewProduct />} />
       </Routes>
       <Footer />
     </Router>

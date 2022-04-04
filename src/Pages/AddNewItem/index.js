@@ -3,6 +3,7 @@ import "./style.css";
 import Product from "../../Components/product";
 import fetchApi from "../../api";
 import Loading from "../../Components/loading";
+import { Link } from "react-router-dom";
 
 const AddNewItem = () => {
   const [items, setItems] = useState([]);
@@ -21,7 +22,9 @@ const AddNewItem = () => {
       <section className="main__manage__container">
         <section className="main__manage__header">
           <h1 className="main__manage__title">Todos os produtos</h1>
-          <button className="main__manage__button">Adicionar produto</button>
+          <Link className="main__manage__button" to={"/new-product"}>
+            Adicionar produto
+          </Link>
         </section>
         <section className="main__manage__products">
           {items ? (
