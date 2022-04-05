@@ -12,6 +12,7 @@ import NewProduct from "./Pages/NewProduct";
 
 function App() {
   const [data, setData] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const fetchItems = async () => {
     const items = await fetchApi("items");
@@ -24,10 +25,13 @@ function App() {
 
   return (
     <Router>
-      <Header data={data} />
+      <Header data={data} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
       <Routes>
         <Route path="/" exact element={<Main />} />
-        <Route path="/login" element={<Login />} />
+        <Route
+          path="/login"
+          element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+        />
         <Route path="/:slug/:slug" element={<ItemDescription />} />
         <Route path="/manage-items" element={<AddNewItem />} />
         <Route path="/new-product" element={<NewProduct />} />

@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
 
 const NewProduct = () => {
+  const [gadgetName, setGadgetName] = useState("computador");
+  const [helperText, setHelperText] = useState(
+    "Arraste para adicionar uma imagem para o produto"
+  );
+
+  const verifyWindowSize = () => {
+    if (window.innerWidth < 1024) {
+      setGadgetName("computador");
+      setHelperText("Arraste para adicionar uma imagem para o produto");
+    }
+    if (window.innerWidth < 768) {
+      setGadgetName("tablet");
+      setHelperText("Arraste para adicionar uma imagem para o produto");
+    }
+    if (window.innerWidth < 468) {
+      setHelperText("Adicione uma imagem");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", verifyWindowSize);
+  }, []);
+
   return (
     <main className="new--product">
       <section className="new--product__container">
@@ -16,12 +39,12 @@ const NewProduct = () => {
               src="/assets/images/image.svg"
               alt=""
             />
-            <p className="new--product__image--add">
-              Arraste para adicionar uma imagem para o produto
-            </p>
+            <p className="new--product__image--add">{helperText}</p>
           </section>
           <p className="new--product__text"> Ou </p>
-          <button className="new--product__button">Procure no seu</button>
+          <button className="new--product__button">
+            Procure no seu {gadgetName}
+          </button>
         </section>
         <form className="new--product__form">
           <TextField
