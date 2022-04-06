@@ -28,6 +28,13 @@
   background-color: var(--light-blue);
 }
 
+.main__login__error {
+  align-self: flex-start;
+  color: var(--red);
+  font-size: .825rem;
+  margin-top: -1.375rem;
+}
+
 @media (max-width: 768px) {
   .main__login__container {
     width: 50%;

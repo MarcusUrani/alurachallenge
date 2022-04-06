@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 
-const Login = ({ loggedIn, setLoggedIn }) => {
+const Login = ({ setLoggedIn }) => {
   const navigate = useNavigate();
   const [error, setError] = useState({});
 
@@ -15,13 +15,19 @@ const Login = ({ loggedIn, setLoggedIn }) => {
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
       errors.email = "Informe um email válido";
     }
+    if (!values.password) {
+      errors.password = "É necessário informar uma senha";
+    } else if (values.password.length < 8) {
+      errors.password = "A senha deve ter no mínimo 8 caracteres";
+    }
+
     return errors;
   };
 
   const formik = useFormik({
     initialValues: {
-      email: "email.email@email.com",
-      password: "123456",
+      email: "",
+      password: "",
     },
   });
 
@@ -49,8 +55,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
         onSubmit={(event) => {
           event.preventDefault();
           setError(validate(formik.values));
-          setLoggedIn(true);
-          if (!error.email) {
+          if (!error.email && !error.password) {
             handleLogin();
             handleGoToTop();
           }
@@ -67,7 +72,7 @@ const Login = ({ loggedIn, setLoggedIn }) => {
           value={formik.values.email}
           variant="filled"
         />
-        {error ? (
+        {error.email ? (
           <span className="main__login__error">{error.email}</span>
         ) : null}
         <TextField
@@ -81,6 +86,9 @@ const Login = ({ loggedIn, setLoggedIn }) => {
           value={formik.values.password}
           variant="filled"
         />
+        {error.password ? (
+          <span className="main__login__error">{error.password}</span>
+        ) : null}
         <button className="main__login__button" type="submit">
           Entrar
         </button>

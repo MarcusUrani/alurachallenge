@@ -6,7 +6,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "./style.css";
 import SearchList from "../searchList";
 
-const Header = ({ data }) => {
+const Header = ({ data, loggedIn }) => {
   const [searchValue, setSearchValue] = useState("");
   const [newArray, setNewArray] = useState([]);
   const [disabled, setDisabled] = useState("block");
@@ -77,15 +77,27 @@ const Header = ({ data }) => {
           </section>
         </section>
       </section>
-      <Link
-        className="header__login"
-        to={"/login"}
-        onClick={() => {
-          handleTop();
-        }}
-      >
-        Login
-      </Link>
+      {loggedIn === true ? (
+        <Link
+          className="header__button manage__button"
+          to={"/manage-items"}
+          onClick={() => {
+            handleTop();
+          }}
+        >
+          Menu Administrador
+        </Link>
+      ) : (
+        <Link
+          className="header__button login__button"
+          to={"/login"}
+          onClick={() => {
+            handleTop();
+          }}
+        >
+          Login
+        </Link>
+      )}
       <FontAwesomeIcon
         icon={faMagnifyingGlass}
         size="lg"

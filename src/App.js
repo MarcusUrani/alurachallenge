@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Router>
-      <Header data={data} loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+      <Header data={data} loggedIn={loggedIn} />
       <Routes>
         <Route path="/" exact element={<Main />} />
         <Route
