@@ -62,7 +62,7 @@ header {
   padding: 1rem 1.5rem;
 }
 
-.header__login:hover {
+.header__button:hover {
   background-color: var(--ice-white);
 }
 

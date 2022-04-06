@@ -63,6 +63,7 @@ const Login = ({ setLoggedIn }) => {
       >
         <h2 className="main__login__title">Iniciar Sessão</h2>
         <TextField
+          color={error.email ? "error" : "primary"}
           fullWidth
           label="Escreva seu email"
           onChange={(event) => {
@@ -76,6 +77,7 @@ const Login = ({ setLoggedIn }) => {
           <span className="main__login__error">{error.email}</span>
         ) : null}
         <TextField
+          color={error.password ? "error" : "primary"}
           fullWidth
           label="Escreva sua senha"
           onChange={(event) => {

@@ -1,6 +1,7 @@
 :root {
   --black: #464646;
   --blue: #2a7ae4;
+  --green: #15bb6e;
   --grey: #a2a2a2;
   --ice-white: #d4e4fa;
   --light-blue: #5595e9;
@@ -8,6 +9,15 @@
   --lighter-blue: #eaf2fd;
   --red: #e84450;
   --white: #ffffff;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 * {
