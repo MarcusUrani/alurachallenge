@@ -5,18 +5,7 @@ import fetchApi from "../../api";
 import Loading from "../../Components/loading";
 import { Link } from "react-router-dom";
 
-const AddNewItem = () => {
-  const [items, setItems] = useState([]);
-
-  const fetchData = async () => {
-    const data = await fetchApi("items");
-    setItems(data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+const AddNewItem = ({ items }) => {
   return (
     <main className="main__manage">
       <section className="main__manage__container">

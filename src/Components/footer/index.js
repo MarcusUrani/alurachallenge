@@ -1,10 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import "./style.css";
 import Logo from "../../Assets/images/Logo.png";
-import { TextField } from "@mui/material";
+import { useFormik } from "formik";
 import FooterLink from "../footerLink";
+import FooterForm from "../footerForm";
 
-const Footer = () => {
+const Footer = ({ loggedIn }) => {
+  const [error, setError] = useState({});
+  const [disabled, setDisabled] = useState(true);
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      message: "",
+    },
+  });
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.name) {
+      errors.name = "O campo não pode estar em branco";
+    } else if (values.name.length < 3) {
+      errors.name = "O campo deve ter no mínimo 3 caracteres";
+    } else if (values.name.length > 40) {
+      errors.name = "O campo deve ter no máximo 40 caracteres";
+    }
+
+    if (!values.message) {
+      errors.message = "O campo não pode estar em branco";
+    } else if (values.message.length < 5) {
+      errors.message = "O campo deve ter no mínimo 5 caracteres";
+    } else if (values.message.length > 120) {
+      errors.message = "O campo deve ter no máximo 120 caracteres";
+    }
+
+    return errors;
+  };
+
   return (
     <footer>
       <section className="footer__container">
@@ -16,27 +49,20 @@ const Footer = () => {
             <FooterLink href="/" children={"Programa de fidelidade"} />
             <FooterLink href="/" children={"Nossas lojas"} />
             <FooterLink href="/" children={"Quero ser franqueado"} />
-            <FooterLink href="/login" children={"Anuncie aqui"} />
+            <FooterLink
+              href={loggedIn === true ? "/manage-items" : "/login"}
+              children={"Anuncie aqui"}
+            />
           </nav>
         </section>
-        <form className="footer__form">
-          <h2 className="footer__form--title">Fale conosco</h2>
-          <TextField
-            sx={{}}
-            label="Nome"
-            fullWidth
-            variant="filled"
-            id="fullWidth"
-          />
-          <TextField
-            sx={{}}
-            fullWidth
-            id="fullWidth"
-            label="Escreva sua mensagem"
-            variant="filled"
-          />
-          <button className="form__button">Enviar mensagem</button>
-        </form>
+        <FooterForm
+          error={error}
+          setError={setError}
+          disabled={disabled}
+          setDisabled={setDisabled}
+          formik={formik}
+          validate={validate}
+        />
       </section>
       <section className="footer__copyright">
         <h3 className="footer__copyright--title">

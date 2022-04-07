@@ -14,7 +14,6 @@ const NewProductForm = ({ error, formik, validate, setError, image }) => {
       className="new--product__form"
       onSubmit={(event) => {
         event.preventDefault();
-        setError(validate(formik.values));
         console.log(error);
         if (
           !error.productName &&
@@ -71,7 +70,13 @@ const NewProductForm = ({ error, formik, validate, setError, image }) => {
       {error.productDescription ? (
         <span className="new--product__error">{error.productDescription}</span>
       ) : null}
-      <button type="submit" className="new--product__submit__button">
+      <button
+        type="submit"
+        className="new--product__submit__button"
+        onClick={() => {
+          setError(validate(formik.values));
+        }}
+      >
         Adicionar produto
       </button>
       {disabled === false ? (

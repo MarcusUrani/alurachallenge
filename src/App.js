@@ -34,11 +34,11 @@ function App() {
           element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
         />
         <Route path="/:slug/:slug" element={<ItemDescription />} />
-        <Route path="/manage-items" element={<AddNewItem />} />
+        <Route path="/manage-items" element={<AddNewItem items={data} />} />
         <Route path="/new-product" element={<NewProduct />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
-      <Footer />
+      <Footer loggedIn={loggedIn} />
     </Router>
   );
 }
