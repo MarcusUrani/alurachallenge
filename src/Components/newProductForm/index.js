@@ -1,10 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
 
-const NewProductForm = ({ error, formik }) => {
+const NewProductForm = ({ error, formik, validate, setError, image }) => {
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    setDisabled(true);
+  }, []);
+
   return (
-    <form className="new--product__form">
+    <form
+      className="new--product__form"
+      onSubmit={(event) => {
+        event.preventDefault();
+        setError(validate(formik.values));
+        console.log(error);
+        if (
+          !error.productName &&
+          !error.productPrice &&
+          image &&
+          !error.productDescription
+        ) {
+          setDisabled(false);
+        } else {
+          setDisabled(true);
+        }
+      }}
+    >
       <TextField
         color={error.productName ? "error" : "primary"}
         fullWidth
@@ -13,7 +36,6 @@ const NewProductForm = ({ error, formik }) => {
           const nameValue = event.target.value;
           formik.setFieldValue("productName", nameValue);
         }}
-        required
         value={formik.values.productName}
         variant="filled"
       />
@@ -28,7 +50,6 @@ const NewProductForm = ({ error, formik }) => {
           const priceValue = event.target.value;
           formik.setFieldValue("productPrice", priceValue);
         }}
-        required
         value={formik.values.productPrice}
         variant="filled"
       />
@@ -44,7 +65,6 @@ const NewProductForm = ({ error, formik }) => {
           const descriptionValue = event.target.value;
           formik.setFieldValue("productDescription", descriptionValue);
         }}
-        required
         value={formik.values.productDescription}
         variant="filled"
       />
@@ -54,6 +74,11 @@ const NewProductForm = ({ error, formik }) => {
       <button type="submit" className="new--product__submit__button">
         Adicionar produto
       </button>
+      {disabled === false ? (
+        <span className="new--product__success">
+          Produto adicionado com sucesso
+        </span>
+      ) : null}
     </form>
   );
 };

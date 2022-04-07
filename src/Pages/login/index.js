@@ -54,7 +54,6 @@ const Login = ({ setLoggedIn }) => {
         className="main__login__container"
         onSubmit={(event) => {
           event.preventDefault();
-          setError(validate(formik.values));
           if (!error.email && !error.password) {
             handleLogin();
             handleGoToTop();

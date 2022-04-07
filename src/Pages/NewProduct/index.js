@@ -30,17 +30,17 @@ const NewProduct = () => {
       errors.productName = "O nome do produto deve ter no máximo 20 caracteres";
     }
 
-    if (!values.productPrice) {
-      errors.productPrice = "O preço do produto é obrigatório";
-    } else if (isNaN(values.productPrice)) {
-      errors.productPrice = "O preço do produto deve ser um número";
-    }
-
     if (!values.productDescription) {
       errors.productDescription = "A descrição do produto é obrigatória";
     } else if (values.productDescription.length > 150) {
       errors.productDescription =
         "A descrição do produto deve ter no máximo 150 caracteres";
+    }
+
+    if (!values.productPrice) {
+      errors.productPrice = "O preço do produto é obrigatório";
+    } else if (isNaN(values.productPrice)) {
+      errors.productPrice = "O preço do produto deve ser um número";
     }
 
     return errors;
@@ -83,10 +83,6 @@ const NewProduct = () => {
   };
 
   useEffect(() => {
-    setError(validate(formik.values));
-  }, [formik.values]);
-
-  useEffect(() => {
     window.addEventListener("resize", verifyWindowSize);
   }, []);
 
@@ -113,7 +109,13 @@ const NewProduct = () => {
             Imagem adicionada com sucesso
           </span>
         )}
-        <NewProductForm error={error} formik={formik} />
+        <NewProductForm
+          error={error}
+          formik={formik}
+          validate={validate}
+          setError={setError}
+          image={image}
+        />
       </section>
     </main>
   );

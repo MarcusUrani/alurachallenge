@@ -6,6 +6,7 @@ import Main from "./Pages/Main";
 import Login from "./Pages/Login";
 import ItemDescription from "./Pages/ItemDescription";
 import AddNewItem from "./Pages/AddNewItem";
+import Page404 from "./Pages/Page404";
 import fetchApi from "./api";
 import { useEffect, useState } from "react";
 import NewProduct from "./Pages/NewProduct";
@@ -35,6 +36,7 @@ function App() {
         <Route path="/:slug/:slug" element={<ItemDescription />} />
         <Route path="/manage-items" element={<AddNewItem />} />
         <Route path="/new-product" element={<NewProduct />} />
+        <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer />
     </Router>
