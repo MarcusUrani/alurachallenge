@@ -2,7 +2,14 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
 
-const NewProductForm = ({ error, formik, validate, setError, image }) => {
+const NewProductForm = ({
+  error,
+  formik,
+  validate,
+  setError,
+  image,
+  setImage,
+}) => {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
@@ -22,6 +29,10 @@ const NewProductForm = ({ error, formik, validate, setError, image }) => {
           !error.productDescription
         ) {
           setDisabled(false);
+          setImage(null);
+          formik.setFieldValue("productName", "");
+          formik.setFieldValue("productPrice", "");
+          formik.setFieldValue("productDescription", "");
         } else {
           setDisabled(true);
         }

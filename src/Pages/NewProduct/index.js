@@ -11,6 +11,7 @@ const NewProduct = () => {
   );
   const [image, setImage] = useState("");
   const [error, setError] = useState({});
+  const [mobile, setMobile] = useState(false);
 
   const formik = useFormik({
     initialValues: {
@@ -72,17 +73,21 @@ const NewProduct = () => {
     if (window.innerWidth < 1024) {
       setGadgetName("computador");
       setHelperText("Arraste para adicionar uma imagem para o produto");
+      setMobile(false);
     }
     if (window.innerWidth < 950) {
       setGadgetName("tablet");
       setHelperText("Arraste para adicionar uma imagem para o produto");
+      setMobile(false);
     }
     if (window.innerWidth < 550) {
       setHelperText("Adicione uma imagem");
+      setMobile(true);
     }
   };
 
   useEffect(() => {
+    verifyWindowSize();
     window.addEventListener("resize", verifyWindowSize);
   }, []);
 
@@ -99,6 +104,7 @@ const NewProduct = () => {
           helperText={helperText}
           gadgetName={gadgetName}
           setHelperText={setHelperText}
+          mobile={mobile}
         />
         {!image ? (
           <span className="new--product__error">
@@ -115,6 +121,7 @@ const NewProduct = () => {
           validate={validate}
           setError={setError}
           image={image}
+          setImage={setImage}
         />
       </section>
     </main>

@@ -10,6 +10,7 @@ import Page404 from "./Pages/Page404";
 import fetchApi from "./api";
 import { useEffect, useState } from "react";
 import NewProduct from "./Pages/NewProduct";
+import AllProducts from "./Pages/AllProducts";
 
 function App() {
   const [data, setData] = useState([]);
@@ -36,6 +37,7 @@ function App() {
         <Route path="/:slug/:slug" element={<ItemDescription />} />
         <Route path="/manage-items" element={<AddNewItem items={data} />} />
         <Route path="/new-product" element={<NewProduct />} />
+        <Route path="/products" element={<AllProducts products={data} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer loggedIn={loggedIn} />

@@ -31,7 +31,17 @@ const ProductList = ({ title, fetchApiUrl, items }) => {
           {title}
         </h2>
         <nav className="product__list__nav">
-          <Link to={`/product`} className="product__list__link">
+          <Link
+            to={`/products`}
+            className="product__list__link"
+            onClick={() => {
+              window.scroll({
+                top: 0,
+                left: 0,
+                behacior: "smooth",
+              });
+            }}
+          >
             Ver tudo
             <FontAwesomeIcon icon={faArrowRight} size="lg" />
           </Link>
