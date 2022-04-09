@@ -50,22 +50,6 @@ header {
   width: 181%;
 }
 
-.header__button {
-  border: var(--blue) solid 0.0625rem;
-  color: var(--blue);
-  font-size: 1rem;
-  padding: 1rem 4.375rem;
-  transition: all ease 0.3s;
-}
-
-.manage__button {
-  padding: 1rem 1.5rem;
-}
-
-.header__button:hover {
-  background-color: var(--ice-white);
-}
-
 @media (max-width: 950px) {
   header {
     width: 90%;
