@@ -28,7 +28,7 @@
 
 .mobile__search {
     display: none;
-    width: 170%;
+    width: 145%;
 }
 
 @media (max-width: 950px) {
@@ -47,6 +47,6 @@
     }
 
     .header__search__span {
-        width: 150%;
+        width: 125%;
     }
 }
