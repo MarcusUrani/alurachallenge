@@ -80,7 +80,7 @@ const NewProduct = () => {
       setHelperText("Arraste para adicionar uma imagem para o produto");
       setMobile(false);
     }
-    if (window.innerWidth < 550) {
+    if (window.innerWidth < 590) {
       setHelperText("Adicione uma imagem");
       setMobile(true);
     }

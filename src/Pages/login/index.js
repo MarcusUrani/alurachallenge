@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -44,10 +44,6 @@ const Login = ({ setLoggedIn }) => {
     });
   };
 
-  useEffect(() => {
-    setError(validate(formik.values));
-  }, [formik.values]);
-
   return (
     <main className="main__login">
       <form
@@ -90,7 +86,13 @@ const Login = ({ setLoggedIn }) => {
         {error.password ? (
           <span className="main__login__error">{error.password}</span>
         ) : null}
-        <button className="main__login__button" type="submit">
+        <button
+          className="main__login__button"
+          type="submit"
+          onClick={() => {
+            setError(validate(formik.values));
+          }}
+        >
           Entrar
         </button>
       </form>
