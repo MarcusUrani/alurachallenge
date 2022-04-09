@@ -26,7 +26,7 @@ const HeaderSearchInput = ({
         }}
       />
       <section
-        className={`header__search__span`}
+        className={`header__search__span ${className}__span`}
         style={{ display: `${disabled}` }}
       >
         {newArray.length > 0 ? (

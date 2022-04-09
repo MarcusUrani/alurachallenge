@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
+import "./style.css";
 import { Link } from "react-router-dom";
 import Logo from "../../Assets/images/Logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
-import "./style.css";
-import SearchList from "../searchList";
 import LoginButton from "../loginButton";
 import HeaderSearchInput from "../headerSearchInput";
 
@@ -74,7 +73,7 @@ const Header = ({ data, loggedIn }) => {
         <>
           <section className="header__mobile__container">
             <HeaderSearchInput
-              className={"__mobile"}
+              className={"mobile"}
               searchValue={searchValue}
               setSearchValue={setSearchValue}
               handleSearchItem={handleSearchItem}
@@ -86,6 +85,7 @@ const Header = ({ data, loggedIn }) => {
             <FontAwesomeIcon
               icon={faXmark}
               onClick={() => {
+                setDisabled("none");
                 setSearchInput(false);
               }}
               size="2x"
