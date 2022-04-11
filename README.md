@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Alura Challenge - Alurageek
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Projeto desenvolvido no alura frontend challenge 3.
 
-## Available Scripts
+## Tecnologias Utilizadas
 
-In the project directory, you can run:
+- React - Utilizado para a estruturação, criação de scripts e funções e chamadas de API para a página.
+- CSS - Estilização da página.
+- React Router Dom - Criação de rotas da página.
+- Font Awesome - Biblioteca utilizada para adicionar ícones a página.
+- Material UI - Bilioteca para a inserção de componentes já personalizados.
+- Formik - Validação dos formulários de "Enviar mensagem", "Login" e "Adicionar produto".
+- Json Server - Hospedagem da Api criada.
+- [API](https://github.com/MarcusUrani/rest_api_alurageek).
 
-### `npm start`
+## Como Usar?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Acesse a página no [link](https://alurageek.netlify.app).
+- Na página inicial serão exibidos cabeçalho, banner principal, listas de produtos e rodapé.
+- No cabeçalho é possível buscar por produtos e realizar o login na página.
+- No banner principal há um botão "Ver consoles", que ao ser clicado, rola a tela para a seção de consoles.
+- Nas seções de produtos é possível ver cada produto por categoria com seu nome, imagem, preço e link para págia do produto.
+- Há um botão ver tudo, que ao ser clicado, redirecionará a página para que todos os produtos sejam exibidos.
+- No rodapé há alguns links e um formulário de enviar mensagem, com um botão, só será possível enviar a mesagem caso os campos estejam corretamente preechidos.
+- Nas páginas de cada produto são exibidos os detalhes do produto, como descrição, preço, imagem e abaixo há uma seção de produtos similares.
+- Na página de login há um formulário, com um botão de entrar, só será possível realizar o login caso os campos estejam corretamente preechidos.
+- Ao realizar o login, será redirecionado para a págia de administrador, onde são exibidos todos os produtos da loja e um botão de adicionar produto.
+- Na página de adicionar produto há um formulário e um input de adicionar imagem, com um botão de enviar, caso todos os campos estejam preenchidos corretamente, será possível adicionar o produto.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Autor
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Marcus Vinícius Gomes Urani
+- [LinkedIn](https://www.linkedin.com/in/marcusurani).
+- [Portfólio](https://marcusurani.netlify.app).
