@@ -22,11 +22,11 @@
 
 ## 🚀Metas
 
-✅ Semana 1 - Fazer a estruturação e estilização da página principal.
+- ✅ Semana 1 - Fazer a estruturação e estilização da página principal.
 
-✅ Semana 2 - Criar as páginas internas dos produtos, rotas para cada produto, criando a página de login e a página de administração de produtos.
+- ✅ Semana 2 - Criar as páginas internas dos produtos, rotas para cada produto, criando a página de login e a página de administração de produtos.
 
-✅ Semana 3 e 4 - Validar formulários de login, enviar mensagem e adicionar produtos.
+- ✅ Semana 3 e 4 - Validar formulários de login, enviar mensagem e adicionar produtos.
 
 ## 👨🏻‍💻 Como Usar?
 
