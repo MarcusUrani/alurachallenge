@@ -4,11 +4,11 @@
 
 ## 🛠Tecnologias Utilizadas
 
-- React
+- React <img align="center" alt="Marcus-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
 
-- CSS
+- CSS <img align="center" alt="Marcus-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
 
-- React Router Dom
+- React Router Dom 
 
 - Font Awesome
 
@@ -28,7 +28,7 @@
 
 ✅ Semana 3 e 4 - Validar formulários de login, enviar mensagem e adicionar produtos.
 
-## Como Usar?
+## 👨🏻‍💻 Como Usar?
 
 - Acesse a página no [link](https://alurageek.netlify.app).
 
@@ -60,7 +60,7 @@
 
 - Adição de produtos a API por meio do formulário de adição de itens.
 
-## 👨🏻‍💻 Autor
+## 🙋🏻‍♂️ Autor
 
 - Marcus Vinícius Gomes Urani
 - [LinkedIn](https://www.linkedin.com/in/marcusurani).
