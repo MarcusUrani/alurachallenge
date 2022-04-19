@@ -1,4 +1,4 @@
-# Alura Challenge - Alurageek
+# Alura Challenge - Alurageek (Em construção)
 
 - Projeto desenvolvido no alura frontend challenge 3.
 
@@ -8,7 +8,7 @@
 
 - CSS <img align="center" alt="Marcus-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
 
-- React Router Dom 
+- React Router Dom
 
 - Font Awesome
 
