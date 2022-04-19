@@ -2,6 +2,10 @@
 
 - Projeto desenvolvido no alura frontend challenge 3.
 
+<div align="center">
+    <img width="300" src="https://i.imgur.com/p7UPJkt.png" alt="alurageek logo"/>
+</div>
+
 ## 🛠Tecnologias Utilizadas
 
 - React <img align="center" alt="Marcus-React" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
