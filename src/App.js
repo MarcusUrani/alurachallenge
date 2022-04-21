@@ -32,7 +32,24 @@ function App() {
         <Route path="/" exact element={<Main />} />
         <Route
           path="/login"
-          element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn} />}
+          element={
+            <Login
+              setLoggedIn={setLoggedIn}
+              buttonLabel={"Entrar"}
+              loginMessage={"Não possui cadastro? Cadastre-se pelo "}
+              slug={"/sign-up"}
+            />
+          }
+        />
+        <Route
+          path="/sign-up"
+          element={
+            <Login
+              buttonLabel={"Cadastre-se"}
+              loginMessage={"Já possui cadastro? Faça o login pelo "}
+              slug={"/login"}
+            />
+          }
         />
         <Route path="/:slug/:slug" element={<ItemDescription />} />
         <Route path="/manage-items" element={<AddNewItem items={data} />} />

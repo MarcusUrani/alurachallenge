@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import LoginForm from "../../Components/loginForm";
 
-const Login = ({ setLoggedIn }) => {
+const Login = ({ setLoggedIn, buttonLabel, loginMessage, slug }) => {
   const navigate = useNavigate();
   const [error, setError] = useState({});
 
@@ -54,12 +54,15 @@ const Login = ({ setLoggedIn }) => {
   return (
     <main className="main__login">
       <LoginForm
+        buttonLabel={buttonLabel}
         error={error}
         setError={setError}
+        loginMessage={loginMessage}
         handleLogin={handleLogin}
         handleGoToTop={handleGoToTop}
         formik={formik}
         validate={validate}
+        slug={slug}
       />
     </main>
   );
