@@ -32,7 +32,10 @@ function App() {
         <Route path="/" exact element={<Main />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route path="/:slug/:slug" element={<ItemDescription />} />
-        <Route path="/manage-items" element={<AddNewItem items={data} />} />
+        <Route
+          path="/manage-items"
+          element={<AddNewItem items={data} setItems={setData} />}
+        />
         <Route path="/new-product" element={<NewProduct />} />
         <Route path="/products" element={<AllProducts products={data} />} />
         <Route path="*" element={<Page404 />} />

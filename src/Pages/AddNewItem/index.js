@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import Product from "../../Components/product";
-import fetchApi from "../../api";
 import Loading from "../../Components/loading";
 import { Link } from "react-router-dom";
 
-const AddNewItem = ({ items }) => {
+const AddNewItem = ({ items, setItems }) => {
+  const handleDeleteItem = (id) => {
+    const newItems = items.filter((item) => item.id !== id);
+    setItems(newItems);
+  };
+
   return (
     <main className="main__manage">
       <section className="main__manage__container">
@@ -23,6 +27,8 @@ const AddNewItem = ({ items }) => {
                 price={item.price}
                 tag={item.tag}
                 miniature={item.miniature}
+                id={item.id}
+                handleDeleteItem={handleDeleteItem}
                 key={item.id}
               />
             ))
