@@ -4,14 +4,11 @@ import { TextField } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const LoginForm = ({
-  buttonLabel,
   error,
   setError,
   handleLogin,
   handleGoToTop,
-  loginMessage,
   formik,
-  slug,
   validate,
 }) => {
   return (
@@ -62,14 +59,8 @@ const LoginForm = ({
           setError(validate(formik.values));
         }}
       >
-        {buttonLabel}
+        Entrar
       </button>
-      <span className="main__login__message">
-        {loginMessage}
-        <Link to={slug} className="main__login__link">
-          link
-        </Link>
-      </span>
     </form>
   );
 };

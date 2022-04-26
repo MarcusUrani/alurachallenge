@@ -58,8 +58,6 @@
 
 ## 🚧 Próximos passos 🚧
 
-- Fazer página de cadastro e autenticação de login.
-
 - Funções de editar e apagar produtos.
 
 - Adição de produtos a API por meio do formulário de adição de itens.
