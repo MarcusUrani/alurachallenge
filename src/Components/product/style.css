@@ -99,16 +99,40 @@
   .product__container {
     width: 20%;
   }
+
+  .modal {
+  padding: 2rem;
+  }
 }
 
 @media (max-width: 600px) {
   .product__container {
     width: 25%;
   }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .modal__text {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 400px) {
   .product__container {
     width: 45%;
+  }
+
+  .modal {
+    padding: 1rem;
+  }
+  
+  .modal__text {
+    font-size: 1rem;
+  }
+
+  .modal__button {
+    font-size: 0.75rem;
   }
 }
