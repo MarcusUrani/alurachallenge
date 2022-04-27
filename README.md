@@ -56,12 +56,6 @@
 
 - Na página de adicionar produto há um formulário e um input de adicionar imagem, com um botão de enviar, caso todos os campos estejam preenchidos corretamente, será possível adicionar o produto.
 
-## 🚧 Próximos passos 🚧
-
-- Funções de editar e apagar produtos.
-
-- Adição de produtos a API por meio do formulário de adição de itens.
-
 ## 🙋🏻‍♂️ Autor
 
 - Marcus Vinícius Gomes Urani
