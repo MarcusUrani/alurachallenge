@@ -4,24 +4,26 @@ import { Link } from "react-router-dom";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ProductSection from "../productSection";
-import fetchApi from "../../api";
 import Loading from "../loading";
 
-const ProductList = ({ title, fetchApiUrl, items }) => {
+const ProductList = ({ title, itemSlug, items, listOfProducts }) => {
   const [products, setProducts] = useState([]);
 
-  const fetchData = async () => {
-    const data = await fetchApi(fetchApiUrl);
-    setProducts(data);
+  const getItemsByList = (listName) => {
+    const newItems = listOfProducts.filter(
+      (product) => product.slug === listName
+    );
+    return newItems;
   };
 
   useEffect(() => {
-    setProducts([]);
-    fetchData();
-  }, [fetchApiUrl]);
-
-  useEffect(() => {
-    setProducts(items);
+    if (itemSlug) {
+      const newItems = getItemsByList(itemSlug);
+      setProducts(newItems);
+    } else {
+      console.log(items);
+      setProducts(items);
+    }
   }, [items]);
 
   return (

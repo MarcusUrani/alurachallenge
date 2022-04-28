@@ -3,13 +3,25 @@ import "./style.css";
 import MainBanner from "../../Components/mainBanner";
 import ProductList from "../../Components/productList";
 
-const Main = () => {
+const Main = ({ products }) => {
   return (
     <main>
       <MainBanner />
-      <ProductList title={"Star Wars"} fetchApiUrl={"starWars"} />
-      <ProductList title={"Consoles"} fetchApiUrl={"consoles"} />
-      <ProductList title={"Diversos"} fetchApiUrl={"miscelaneous"} />
+      <ProductList
+        title={"Star Wars"}
+        listOfProducts={products}
+        itemSlug={"starWars"}
+      />
+      <ProductList
+        title={"Consoles"}
+        listOfProducts={products}
+        itemSlug={"consoles"}
+      />
+      <ProductList
+        title={"Diversos"}
+        listOfProducts={products}
+        itemSlug={"miscelaneous"}
+      />
     </main>
   );
 };

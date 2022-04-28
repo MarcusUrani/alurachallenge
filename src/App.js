@@ -29,9 +29,12 @@ function App() {
     <Router>
       <Header data={data} loggedIn={loggedIn} />
       <Routes>
-        <Route path="/" exact element={<Main />} />
+        <Route path="/" exact element={<Main products={data} />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
-        <Route path="/:slug/:slug" element={<ItemDescription />} />
+        <Route
+          path="/:slug/:slug"
+          element={<ItemDescription products={data} />}
+        />
         <Route
           path="/manage-items"
           element={<AddNewItem items={data} setItems={setData} />}

@@ -3,20 +3,13 @@ import "./style.css";
 import { useParams } from "react-router-dom";
 import InternDescription from "../../Components/internDescription";
 import ProductList from "../../Components/productList";
-import fetchApi from "../../api";
 import Loading from "../../Components/loading";
 
-const ItemDescription = () => {
+const ItemDescription = ({ products }) => {
   const params = useParams();
-  const [products, setProducts] = useState([]);
   const [similarItems, setSimilarItems] = useState();
   const itemId = params.slug - 1;
   const item = products[itemId];
-
-  const fetchData = async () => {
-    const data = await fetchApi("items");
-    setProducts(data);
-  };
 
   const getSimilarItems = () => {
     if (itemId > 11) {
@@ -32,7 +25,6 @@ const ItemDescription = () => {
   };
 
   useEffect(() => {
-    fetchData();
     getSimilarItems();
   }, [itemId]);
 
@@ -41,11 +33,7 @@ const ItemDescription = () => {
       {similarItems && item ? (
         <>
           <InternDescription item={item} />
-          <ProductList
-            title={"Produtos similares"}
-            fetchApiUrl={`${item.slug}`}
-            items={similarItems}
-          />
+          <ProductList title={"Produtos similares"} items={similarItems} />
         </>
       ) : (
         <Loading />
