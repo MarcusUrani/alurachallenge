@@ -50,7 +50,7 @@
 
 - Nas páginas de cada produto são exibidos os detalhes do produto, como descrição, preço, imagem e abaixo há uma seção de produtos similares.
 
-- Na página de login há um formulário, com um botão de entrar, só será possível realizar o login caso os campos estejam corretamente preechidos.
+- Na página de login há um formulário, com um botão de entrar, só será possível realizar o login com as seguintes credenciais: email: marcus.urani@gmail.com | senha: Marcus123\*.
 
 - Ao realizar o login, será redirecionado para a págia de administrador, onde são exibidos todos os produtos da loja e um botão de adicionar produto.
 

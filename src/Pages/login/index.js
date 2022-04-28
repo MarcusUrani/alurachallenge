@@ -7,6 +7,10 @@ import LoginForm from "../../Components/loginForm";
 const Login = ({ setLoggedIn }) => {
   const navigate = useNavigate();
   const [error, setError] = useState({});
+  const admin = {
+    email: "marcus.urani@gmail.com",
+    password: "Marcus123*",
+  };
 
   const validate = (values) => {
     const errors = {};
@@ -14,6 +18,8 @@ const Login = ({ setLoggedIn }) => {
       errors.email = "É necessário informar um email";
     } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
       errors.email = "Informe um email válido";
+    } else if (values.email !== admin.email) {
+      errors.email = "Email não cadastrado";
     }
     if (!values.password) {
       errors.password = "É necessário informar uma senha";
@@ -26,6 +32,8 @@ const Login = ({ setLoggedIn }) => {
     ) {
       errors.password =
         "A senha deve conter pelo menos um caractere especial, uma letra maiúscula, uma letra minúscula e um número";
+    } else if (values.password !== admin.password) {
+      errors.password = "Senha incorreta";
     }
 
     return errors;
@@ -60,6 +68,7 @@ const Login = ({ setLoggedIn }) => {
         handleGoToTop={handleGoToTop}
         formik={formik}
         validate={validate}
+        admin={admin}
       />
     </main>
   );
