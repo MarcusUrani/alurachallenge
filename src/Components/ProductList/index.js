@@ -9,22 +9,25 @@ import Loading from "../loading";
 const ProductList = ({ title, itemSlug, items, listOfProducts }) => {
   const [products, setProducts] = useState([]);
 
-  const getItemsByList = (listName) => {
-    const newItems = listOfProducts.filter(
-      (product) => product.slug === listName
-    );
-    return newItems;
-  };
-
   useEffect(() => {
-    if (itemSlug) {
-      const newItems = getItemsByList(itemSlug);
-      setProducts(newItems);
-    } else {
-      console.log(items);
-      setProducts(items);
-    }
-  }, [items]);
+    const getItemsByList = (listName) => {
+      const newItems = listOfProducts.filter(
+        (product) => product.slug === listName
+      );
+      return newItems;
+    };
+
+    const getProducts = () => {
+      if (itemSlug) {
+        const newProducts = getItemsByList(itemSlug);
+        setProducts(newProducts);
+      } else {
+        setProducts(items);
+      }
+    };
+
+    getProducts();
+  }, [setProducts, itemSlug, items, listOfProducts]);
 
   return (
     <section className="product__list">
@@ -40,7 +43,7 @@ const ProductList = ({ title, itemSlug, items, listOfProducts }) => {
               window.scroll({
                 top: 0,
                 left: 0,
-                behacior: "smooth",
+                behavior: "smooth",
               });
             }}
           >
@@ -50,7 +53,7 @@ const ProductList = ({ title, itemSlug, items, listOfProducts }) => {
         </nav>
       </section>
       <section className="product__list__content">
-        {products ? (
+        {products.length > 0 ? (
           products.map((product) => (
             <ProductSection key={product.id} product={product} />
           ))
