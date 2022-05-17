@@ -11,22 +11,21 @@ const ItemDescription = ({ products }) => {
   const itemId = params.slug - 1;
   const item = products[itemId];
 
-  const getSimilarItems = () => {
-    if (itemId > 11) {
-      const newArray = products.slice(itemId - 6, itemId);
-      setSimilarItems(newArray);
-    } else if (itemId < 7) {
-      const newArray = products.slice(params.slug, itemId + 7);
-      setSimilarItems(newArray);
-    } else {
-      const newArray = products.slice(params.slug, itemId + 7);
-      setSimilarItems(newArray);
-    }
-  };
-
   useEffect(() => {
+    const getSimilarItems = () => {
+      if (itemId > 11) {
+        const newArray = products.slice(itemId - 6, itemId);
+        setSimilarItems(newArray);
+      } else if (itemId < 7) {
+        const newArray = products.slice(params.slug, itemId + 7);
+        setSimilarItems(newArray);
+      } else {
+        const newArray = products.slice(params.slug, itemId + 7);
+        setSimilarItems(newArray);
+      }
+    };
     getSimilarItems();
-  }, [itemId]);
+  }, [setSimilarItems, itemId, products, params.slug]);
 
   return (
     <main className="main__description">

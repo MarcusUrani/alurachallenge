@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.css";
 import { DeleteSharp, Edit } from "@mui/icons-material";
+import ConfirmModal from "../confirmModal";
 
 const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
@@ -13,6 +14,7 @@ const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
         <img
           className="product__miniature"
           src={`/assets/images/${miniature}.png`}
+          alt="miniatura da imagem do produto"
         />
         <section className="product__icons">
           <DeleteSharp
@@ -32,30 +34,12 @@ const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
         <p className="product__tag">{tag}</p>
       </article>
       {openDeleteModal === true ? (
-        <section className="modal__section">
-          <section className="modal">
-            <span className="modal__text">{modalText}</span>
-            <section className="modal__buttons">
-              <button
-                className="modal__button no__button"
-                onClick={() => {
-                  setOpenDeleteModal(false);
-                }}
-              >
-                Não
-              </button>
-              <button
-                className="modal__button yes__button"
-                onClick={() => {
-                  setOpenDeleteModal(false);
-                  handleDeleteItem(itemId);
-                }}
-              >
-                Sim
-              </button>
-            </section>
-          </section>
-        </section>
+        <ConfirmModal
+          modalText={modalText}
+          itemId={itemId}
+          handleDeleteItem={handleDeleteItem}
+          setOpenDeleteModal={setOpenDeleteModal}
+        />
       ) : null}
     </section>
   );

@@ -7,7 +7,7 @@ import Login from "./Pages/Login";
 import ItemDescription from "./Pages/ItemDescription";
 import AddNewItem from "./Pages/AddNewItem";
 import Page404 from "./Pages/Page404";
-import fetchApi from "./api";
+import { fetchApi } from "./api";
 import { useEffect, useState } from "react";
 import NewProduct from "./Pages/NewProduct";
 import AllProducts from "./Pages/AllProducts";
