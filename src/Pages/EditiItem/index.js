@@ -16,9 +16,8 @@ const EditItem = ({ products }) => {
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    const itemId = params.slug - 1;
-    const newItem = products[itemId];
-    setItem(newItem);
+    const itemById = products.find((product) => product.id === params.slug);
+    setItem(itemById);
 
     setIsModalOpen(false);
 
