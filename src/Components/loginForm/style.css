@@ -16,6 +16,7 @@
     font-size: 1.125rem;
     padding: 1.5rem 0;
     text-align: center;
+    transition: all ease .3s;
     width: 100%;
 }
 

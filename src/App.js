@@ -11,6 +11,7 @@ import { fetchApi } from "./api";
 import { useEffect, useState } from "react";
 import NewProduct from "./Pages/NewProduct";
 import AllProducts from "./Pages/AllProducts";
+import EditItem from "./Pages/EditiItem";
 
 function App() {
   const [data, setData] = useState([]);
@@ -32,7 +33,7 @@ function App() {
         <Route path="/" exact element={<Main products={data} />} />
         <Route path="/login" element={<Login setLoggedIn={setLoggedIn} />} />
         <Route
-          path="/:slug/:slug"
+          path="/product/:slug"
           element={<ItemDescription products={data} />}
         />
         <Route
@@ -41,6 +42,7 @@ function App() {
         />
         <Route path="/new-product" element={<NewProduct />} />
         <Route path="/products" element={<AllProducts products={data} />} />
+        <Route path="/edit-item/:slug" element={<EditItem products={data} />} />
         <Route path="*" element={<Page404 />} />
       </Routes>
       <Footer loggedIn={loggedIn} />

@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./style.css";
 import { DeleteSharp, Edit } from "@mui/icons-material";
 import ConfirmModal from "../confirmModal";
+import { useNavigate } from "react-router-dom";
 
 const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
   const [openDeleteModal, setOpenDeleteModal] = useState(false);
   const [modalText, setModalText] = useState("");
   const [itemId, setItemId] = useState(0);
+  const [itemEditId, setItemEditId] = useState(0);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    setItemId(id);
+    setItemEditId(id);
+  }, [id]);
 
   return (
     <section className="product__container">
@@ -22,10 +30,14 @@ const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
             onClick={() => {
               setOpenDeleteModal(true);
               setModalText("Deseja excluir o produto?");
-              setItemId(id);
             }}
           />
-          <Edit sx={{ color: "#fff", cursor: "pointer" }} onClick={() => {}} />
+          <Edit
+            sx={{ color: "#fff", cursor: "pointer" }}
+            onClick={() => {
+              navigate(`/edit-item/${itemEditId}`);
+            }}
+          />
         </section>
       </section>
       <article className="product__content">
