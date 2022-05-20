@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { editApi } from "../../api";
 import validate from "../../validation";
+import EditModal from "../../Components/editModal";
 import "./style.css";
 
 const EditItem = ({ products }) => {
@@ -126,7 +127,7 @@ const EditItem = ({ products }) => {
           </button>
         </form>
       </section>
-      {/* {isModalOpen ? <EditModal /> : null} */}
+      {isModalOpen ? <EditModal setIsModalOpen={setIsModalOpen} /> : null}
     </main>
   );
 };

@@ -8,8 +8,8 @@ import Loading from "../../Components/loading";
 const ItemDescription = ({ products }) => {
   const params = useParams();
   const [similarItems, setSimilarItems] = useState();
-  const itemId = params.slug - 1;
-  const item = products[itemId];
+  const itemById = products.find((item) => item.id === params.slug);
+  const itemId = itemById.id;
 
   useEffect(() => {
     const getSimilarItems = () => {
@@ -17,10 +17,10 @@ const ItemDescription = ({ products }) => {
         const newArray = products.slice(itemId - 6, itemId);
         setSimilarItems(newArray);
       } else if (itemId < 7) {
-        const newArray = products.slice(params.slug, itemId + 7);
+        const newArray = products.slice(itemId, itemId - 1 + 7);
         setSimilarItems(newArray);
       } else {
-        const newArray = products.slice(params.slug, itemId + 7);
+        const newArray = products.slice(itemId, itemId - 1 + 7);
         setSimilarItems(newArray);
       }
     };
@@ -29,9 +29,9 @@ const ItemDescription = ({ products }) => {
 
   return (
     <main className="main__description">
-      {similarItems && item ? (
+      {similarItems && itemById ? (
         <>
-          <InternDescription item={item} />
+          <InternDescription item={itemById} />
           <ProductList title={"Produtos similares"} items={similarItems} />
         </>
       ) : (
