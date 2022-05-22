@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
+import Button from "../button";
 
 const LoginForm = ({
   error,
@@ -10,6 +11,9 @@ const LoginForm = ({
   formik,
   validate,
 }) => {
+  const handleSubmit = () => {
+    setError(validate(formik.values));
+  };
   return (
     <form
       className="main__login__container"
@@ -51,15 +55,12 @@ const LoginForm = ({
       {error.password ? (
         <span className="main__login__error">{error.password}</span>
       ) : null}
-      <button
+      <Button
         className="main__login__button"
-        type="submit"
-        onClick={() => {
-          setError(validate(formik.values));
-        }}
-      >
-        Entrar
-      </button>
+        children={"Entrar"}
+        nameClass={"blue__button full__width"}
+        onClickFunction={handleSubmit}
+      />
     </form>
   );
 };

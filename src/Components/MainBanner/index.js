@@ -1,8 +1,16 @@
 import React from "react";
 import "./style.css";
 import HomeBanner from "../../Assets/images/homeBanner.png";
+import Button from "../button";
 
 const MainBanner = () => {
+  const handleGoToConsoles = () => {
+    window.scrollTo({
+      top: document.querySelector("#Consoles").offsetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section
       className="main__banner"
@@ -20,17 +28,11 @@ const MainBanner = () => {
         <h2 className="main__subtitle">
           Produtos selecionados com 33% de desconto
         </h2>
-        <a
-          className="main__button"
-          onClick={() => {
-            window.scrollTo({
-              top: document.querySelector("#Consoles").offsetTop,
-              behavior: "smooth",
-            });
-          }}
-        >
-          Ver consoles
-        </a>
+        <Button
+          nameClass={"blue__button"}
+          children={"Ver consoles"}
+          onClickFunction={handleGoToConsoles}
+        />
       </section>
     </section>
   );

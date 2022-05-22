@@ -5,6 +5,7 @@ import { editApi } from "../../api";
 import validate from "../../validation";
 import EditModal from "../../Components/editModal";
 import "./style.css";
+import Button from "../../Components/button";
 
 const EditItem = ({ products }) => {
   const params = useParams();
@@ -15,6 +16,10 @@ const EditItem = ({ products }) => {
   const [itemValues, setItemValues] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [errors, setErrors] = useState({});
+
+  const handleSubmit = () => {
+    setErrors(validate(itemValues));
+  };
 
   useEffect(() => {
     const itemById = products.find((product) => product.id === params.slug);
@@ -116,15 +121,12 @@ const EditItem = ({ products }) => {
               {errors.productDescription}
             </span>
           ) : null}
-          <button
-            type="submit"
-            className="main__edit__button"
-            onClick={() => {
-              setErrors(validate(itemValues));
-            }}
-          >
-            Confirmar edição
-          </button>
+          <Button
+            children={"Confirmar edição"}
+            nameClass="blue__button full__width"
+            onClickFunction={handleSubmit}
+            buttonType={"submit"}
+          />
         </form>
       </section>
       {isModalOpen ? <EditModal setIsModalOpen={setIsModalOpen} /> : null}

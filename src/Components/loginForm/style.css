@@ -1,55 +1,39 @@
 .main__login__container {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.375rem;
-    justify-content: center;
-    margin: 0 auto;
-    width: 30%;
-}
-
-.main__login__button {
-    border: none;
-    background-color: var(--blue);
-    color: var(--white);
-    cursor: pointer;
-    font-size: 1.125rem;
-    padding: 1.5rem 0;
-    text-align: center;
-    transition: all ease .3s;
-    width: 100%;
-}
-
-.main__login__button:hover {
-    background-color: var(--light-blue);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.375rem;
+  justify-content: center;
+  margin: 0 auto;
+  width: 30%;
 }
 
 .main__login__error {
-    align-self: flex-start;
-    color: var(--red);
-    font-size: .825rem;
-    font-weight: bold;
-    margin-top: -1.375rem;
+  align-self: flex-start;
+  color: var(--red);
+  font-size: 0.825rem;
+  font-weight: bold;
+  margin-top: -1.375rem;
 }
 
 .main__login__link {
-    color: var(--blue);
-    font-weight: bold;
-    transition: all ease .5s;
+  color: var(--blue);
+  font-weight: bold;
+  transition: all ease 0.5s;
 }
 
 .main__login__link:hover {
-    color: var(--light-blue);
+  color: var(--light-blue);
 }
 
 @media (max-width: 768px) {
-    .main__login__container {
-        width: 50%;
-    }
+  .main__login__container {
+    width: 50%;
+  }
 }
 
 @media (max-width: 500px) {
-    .main__login__container {
-        width: 75%;
-    }
+  .main__login__container {
+    width: 75%;
+  }
 }

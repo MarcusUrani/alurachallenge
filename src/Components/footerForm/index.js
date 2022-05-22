@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
+import Button from "../button";
 
 const FooterForm = ({
   disabled,
@@ -10,6 +11,9 @@ const FooterForm = ({
   formik,
   validate,
 }) => {
+  const handleSubmit = () => {
+    setError(validate(formik.values));
+  };
   return (
     <form
       className="footer__form"
@@ -53,15 +57,12 @@ const FooterForm = ({
       {error.message ? (
         <span className="form__error">{error.message}</span>
       ) : null}
-      <button
-        className="form__button"
-        type="sumbit"
-        onClick={() => {
-          setError(validate(formik.values));
-        }}
-      >
-        Enviar mensagem
-      </button>
+      <Button
+        children={"Enviar mensagem"}
+        onClickFunction={handleSubmit}
+        nameClass={"blue__button"}
+        buttonType={"submit"}
+      />
       {disabled === false ? (
         <span className="form__success">Mensagem enviada com sucesso</span>
       ) : null}

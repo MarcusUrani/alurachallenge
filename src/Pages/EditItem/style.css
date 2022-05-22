@@ -26,22 +26,6 @@
   gap: 1rem;
 }
 
-.main__edit__button {
-  background-color: var(--blue);
-  border: none;
-  color: var(--white);
-  cursor: pointer;
-  font-size: 1.125rem;
-  text-align: center;
-  padding: 1.5rem 0;
-  transition: all ease 0.3s;
-  width: 100%;
-}
-
-.main__edit__button:hover {
-  background-color: var(--light-blue);
-}
-
 .main__edit__error {
   color: var(--red);
   font-size: 0.875rem;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
+import Button from "../button";
 
 const NewProductForm = ({
   error,
@@ -11,6 +12,10 @@ const NewProductForm = ({
   setImage,
 }) => {
   const [disabled, setDisabled] = useState(true);
+
+  const handleSubmit = () => {
+    setError(validate(formik.values));
+  };
 
   useEffect(() => {
     setDisabled(true);
@@ -81,15 +86,12 @@ const NewProductForm = ({
       {error.productDescription ? (
         <span className="new--product__error">{error.productDescription}</span>
       ) : null}
-      <button
-        type="submit"
-        className="new--product__submit__button"
-        onClick={() => {
-          setError(validate(formik.values));
-        }}
-      >
-        Adicionar produto
-      </button>
+      <Button
+        children={"Adicionar produto"}
+        nameClass={"blue__button"}
+        onClickFunction={handleSubmit}
+        buttonType={"submit"}
+      />
       {disabled === false ? (
         <span className="new--product__success">
           Produto adicionado com sucesso
