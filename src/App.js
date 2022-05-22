@@ -11,7 +11,7 @@ import { fetchApi } from "./api";
 import { useEffect, useState } from "react";
 import NewProduct from "./Pages/NewProduct";
 import AllProducts from "./Pages/AllProducts";
-import EditItem from "./Pages/EditiItem";
+import EditItem from "./Pages/EditItem";
 
 function App() {
   const [data, setData] = useState([]);
