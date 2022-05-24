@@ -5,7 +5,7 @@ import "./style.css";
 const EditModal = ({ setIsModalOpen }) => {
   const navigate = useNavigate();
 
-  const handleEdit = () => {
+  const handleCloseModal = () => {
     window.scroll({
       top: 0,
       left: 0,
@@ -22,7 +22,7 @@ const EditModal = ({ setIsModalOpen }) => {
           <Button
             nameClass={"blue__button"}
             children={"Ok"}
-            onClickFunction={handleEdit}
+            onClickFunction={handleCloseModal}
           />
         </section>
       </section>

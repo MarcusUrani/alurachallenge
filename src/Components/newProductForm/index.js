@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
+// import { postApi } from "../../api";
 import Button from "../button";
 
 const NewProductForm = ({
@@ -10,10 +11,11 @@ const NewProductForm = ({
   setError,
   image,
   setImage,
+  item,
 }) => {
   const [disabled, setDisabled] = useState(true);
 
-  const handleSubmit = () => {
+  const handleCheckErrors = () => {
     setError(validate(formik.values));
   };
 
@@ -26,7 +28,6 @@ const NewProductForm = ({
       className="new--product__form"
       onSubmit={(event) => {
         event.preventDefault();
-        console.log(error);
         if (
           !error.productName &&
           !error.productPrice &&
@@ -50,6 +51,7 @@ const NewProductForm = ({
         onChange={(event) => {
           const nameValue = event.target.value;
           formik.setFieldValue("productName", nameValue);
+          item.name = nameValue;
         }}
         value={formik.values.productName}
         variant="filled"
@@ -64,6 +66,7 @@ const NewProductForm = ({
         onChange={(event) => {
           const priceValue = event.target.value;
           formik.setFieldValue("productPrice", priceValue);
+          item.price = priceValue;
         }}
         value={formik.values.productPrice}
         variant="filled"
@@ -79,6 +82,7 @@ const NewProductForm = ({
         onChange={(event) => {
           const descriptionValue = event.target.value;
           formik.setFieldValue("productDescription", descriptionValue);
+          item.description = descriptionValue;
         }}
         value={formik.values.productDescription}
         variant="filled"
@@ -89,7 +93,7 @@ const NewProductForm = ({
       <Button
         children={"Adicionar produto"}
         nameClass={"blue__button"}
-        onClickFunction={handleSubmit}
+        onClickFunction={handleCheckErrors}
         buttonType={"submit"}
       />
       {disabled === false ? (
