@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
-// import { postApi } from "../../api";
 import Button from "../button";
+import { useNavigate } from "react-router-dom";
 
 const NewProductForm = ({
   error,
@@ -11,9 +11,9 @@ const NewProductForm = ({
   setError,
   image,
   setImage,
-  item,
 }) => {
   const [disabled, setDisabled] = useState(true);
+  const navigate = useNavigate();
 
   const handleCheckErrors = () => {
     setError(validate(formik.values));
@@ -39,6 +39,7 @@ const NewProductForm = ({
           formik.setFieldValue("productName", "");
           formik.setFieldValue("productPrice", "");
           formik.setFieldValue("productDescription", "");
+          navigate("/manage-items");
         } else {
           setDisabled(true);
         }
@@ -51,7 +52,6 @@ const NewProductForm = ({
         onChange={(event) => {
           const nameValue = event.target.value;
           formik.setFieldValue("productName", nameValue);
-          item.name = nameValue;
         }}
         value={formik.values.productName}
         variant="filled"
@@ -66,7 +66,6 @@ const NewProductForm = ({
         onChange={(event) => {
           const priceValue = event.target.value;
           formik.setFieldValue("productPrice", priceValue);
-          item.price = priceValue;
         }}
         value={formik.values.productPrice}
         variant="filled"
@@ -82,7 +81,6 @@ const NewProductForm = ({
         onChange={(event) => {
           const descriptionValue = event.target.value;
           formik.setFieldValue("productDescription", descriptionValue);
-          item.description = descriptionValue;
         }}
         value={formik.values.productDescription}
         variant="filled"

@@ -13,7 +13,6 @@ const NewProduct = () => {
   const [image, setImage] = useState("");
   const [error, setError] = useState({});
   const [mobile, setMobile] = useState(false);
-  const [item, setItem] = useState({});
 
   const formik = useFormik({
     initialValues: {
@@ -65,23 +64,13 @@ const NewProduct = () => {
   useEffect(() => {
     verifyWindowSize();
     window.addEventListener("resize", verifyWindowSize);
-    setItem({
-      name: "",
-      image: image,
-      miniature: image,
-      alt: "item",
-      price: "",
-      description: "",
-      tag: "#111111",
-      slug: "item",
-    });
-  }, [image, setItem]);
+  }, []);
 
   return (
     <main className="new--product">
       <section className="new--product__container">
         <article className="new--product__header">
-          <h1 className="new--product__title">Adiconar novo produto</h1>
+          <h1 className="new--product__title">Adicionar novo produto</h1>
         </article>
         <AddImageSection
           dropHandler={dropHandler}
@@ -91,7 +80,6 @@ const NewProduct = () => {
           gadgetName={gadgetName}
           setHelperText={setHelperText}
           mobile={mobile}
-          item={item}
         />
         {!image ? (
           <span className="new--product__error">
@@ -109,7 +97,6 @@ const NewProduct = () => {
           setError={setError}
           image={image}
           setImage={setImage}
-          item={item}
         />
       </section>
     </main>

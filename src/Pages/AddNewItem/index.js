@@ -3,18 +3,14 @@ import "./style.css";
 import Product from "../../Components/product";
 import Loading from "../../Components/loading";
 import { Link } from "react-router-dom";
-import { editApi } from "../../api";
+import { removeApiItem } from "../../api";
 
 const AddNewItem = ({ items, setItems }) => {
   const handleDeleteItem = (id) => {
     const newItems = items.filter((item) => item.id !== id);
+    removeApiItem(id);
     setItems(newItems);
   };
-
-  // const handleEditItem = (id) => {
-  //   const item = items.find((item) => item.id === id);
-  //   editApi("items", item);
-  // };
 
   return (
     <main className="main__manage">

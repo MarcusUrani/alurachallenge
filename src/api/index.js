@@ -29,10 +29,11 @@ const editApi = async (slug, data) => {
 
 const postApi = async (data) => {
   const requisition = await axios.post(
-    `https://rest-api-alurageek.herokuapp.com/products`,
+    `https://rest-api-alurageek.herokuapp.com/items`,
     {
       name: data.name,
       image: data.image,
+      id: data.id,
       miniature: data.miniature,
       alt: data.alt,
       price: data.price,
@@ -45,4 +46,12 @@ const postApi = async (data) => {
   return response;
 };
 
-export { fetchApi, editApi, postApi };
+const removeApiItem = async (id) => {
+  const requisition = await axios.delete(
+    `https://rest-api-alurageek.herokuapp.com/items/${id}`
+  );
+  const response = await requisition.data;
+  return response;
+};
+
+export { fetchApi, editApi, postApi, removeApiItem };

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import "./style.css";
 import Logo from "../../Assets/images/Logo.png";
 import { useFormik } from "formik";
 import FooterLink from "../footerLink";
 import FooterForm from "../footerForm";
+import { Link } from "react-router-dom";
+import "./style.css";
 
 const Footer = ({ loggedIn }) => {
   const [error, setError] = useState({});
@@ -15,6 +16,14 @@ const Footer = ({ loggedIn }) => {
       message: "",
     },
   });
+
+  const handleGoToTop = () => {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
   const validate = (values) => {
     const errors = {};
@@ -42,7 +51,9 @@ const Footer = ({ loggedIn }) => {
     <footer>
       <section className="footer__container">
         <section className="footer__content">
-          <img className="footer__logo" src={Logo} alt="Logo AluraGeek" />
+          <Link to={"/"} onClick={handleGoToTop}>
+            <img className="footer__logo" src={Logo} alt="Logo AluraGeek" />
+          </Link>
           <nav className="footer__links">
             <FooterLink href="/" children={"Quem somos nós"} />
             <FooterLink href="/" children={"Política de privacidade"} />
