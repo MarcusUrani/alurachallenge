@@ -5,7 +5,7 @@ const SearchList = ({ item }) => {
   return (
     <section className="search__item__container">
       <img
-        src={`/assets/images/${item.miniature}.png`}
+        src={item.miniature}
         alt={item.alt}
         className="search__item__image"
       />
