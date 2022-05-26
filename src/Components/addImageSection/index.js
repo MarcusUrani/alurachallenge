@@ -6,8 +6,8 @@ const AddImageSection = ({
   dragOverHandler,
   helperText,
   gadgetName,
-  setImage,
   setHelperText,
+  readImage,
   mobile,
 }) => {
   return (
@@ -46,7 +46,8 @@ const AddImageSection = ({
             type={"file"}
             accept="image/*"
             onChange={(event) => {
-              setImage(event.target.files[0]);
+              const file = event.target.files[0];
+              readImage(file);
               setHelperText("Imagem adicionada com sucesso");
             }}
           />
@@ -64,7 +65,8 @@ const AddImageSection = ({
           type={"file"}
           accept="image/*"
           onChange={(event) => {
-            setImage(event.target.files[0]);
+            const file = event.target.files[0];
+            readImage(file);
             setHelperText("Imagem adicionada com sucesso");
           }}
         />

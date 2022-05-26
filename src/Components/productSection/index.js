@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 const ProductSection = ({ product }) => {
   return (
     <section className="product__item">
-      <img
-        src={`/assets/images/${product.miniature}.png`}
-        alt={product.alt}
-        className="product__item__image"
-      />
+      <figure className="product__item__image">
+        <img
+          src={product.miniature}
+          alt={product.alt}
+          className="product__item__image__content"
+        />
+      </figure>
       <h3 className="product__item__title">{product.name}</h3>
       <p className="product__item__price">R$ {product.price}</p>
       <Link

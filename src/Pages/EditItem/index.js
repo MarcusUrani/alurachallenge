@@ -6,6 +6,7 @@ import validate from "../../validation";
 import EditModal from "../../Components/editModal";
 import "./style.css";
 import Button from "../../Components/button";
+import Loading from "../../Components/loading";
 
 const EditItem = ({ products }) => {
   const params = useParams();
@@ -22,7 +23,9 @@ const EditItem = ({ products }) => {
   };
 
   useEffect(() => {
-    const itemById = products.find((product) => product.id === params.slug);
+    const itemById = products.find(
+      (product) => product.id === Number(params.slug)
+    );
     setItem(itemById);
 
     setIsModalOpen(false);
@@ -58,76 +61,80 @@ const EditItem = ({ products }) => {
           <h1 className="main__edit__title">Editar Item</h1>
         </article>
         {item ? (
-          <img
-            className="main__edit__image"
-            src={`/assets/images/${item.image}.png`}
-            alt={item.alt}
-          />
-        ) : null}
-        <form
-          className="main__edit__form"
-          onSubmit={async (event) => {
-            event.preventDefault();
-            if (Object.keys(errors).length === 0) {
-              setIsModalOpen(true);
-              await editApi("items", item);
-            }
-          }}
-        >
-          <TextField
-            onChange={(event) => {
-              const value = event.target.value;
-              setproductName(value);
-              item.name = value;
-            }}
-            fullWidth
-            label="Nome do produto"
-            type="text"
-            variant="filled"
-            value={item ? productName : ""}
-          />
-          {errors.productName ? (
-            <span className="main__edit__error">{errors.productName}</span>
-          ) : null}
-          <TextField
-            onChange={(event) => {
-              const value = event.target.value;
-              setproductPrice(value);
-              item.price = value;
-            }}
-            fullWidth
-            label="Preço do produto"
-            type="number"
-            variant="filled"
-            value={item ? productPrice : ""}
-          />
-          {errors.productPrice ? (
-            <span className="main__edit__error">{errors.productPrice}</span>
-          ) : null}
-          <TextField
-            onChange={(event) => {
-              const value = event.target.value;
-              setproductDescription(value);
-              item.description = value;
-            }}
-            fullWidth
-            label="Descrição do produto"
-            type="text"
-            variant="filled"
-            value={item ? productDescription : ""}
-          />
-          {errors.productDescription ? (
-            <span className="main__edit__error">
-              {errors.productDescription}
-            </span>
-          ) : null}
-          <Button
-            children={"Confirmar edição"}
-            nameClass="blue__button full__width"
-            onClickFunction={handleSubmit}
-            buttonType={"submit"}
-          />
-        </form>
+          <>
+            <img
+              className="main__edit__image"
+              src={item.image}
+              alt={item.alt}
+            />
+            <form
+              className="main__edit__form"
+              onSubmit={async (event) => {
+                event.preventDefault();
+                if (Object.keys(errors).length === 0) {
+                  setIsModalOpen(true);
+                  await editApi("items", item);
+                }
+              }}
+            >
+              <TextField
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setproductName(value);
+                  item.name = value;
+                }}
+                fullWidth
+                label="Nome do produto"
+                type="text"
+                variant="filled"
+                value={item ? productName : ""}
+              />
+              {errors.productName ? (
+                <span className="main__edit__error">{errors.productName}</span>
+              ) : null}
+              <TextField
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setproductPrice(value);
+                  item.price = value;
+                }}
+                fullWidth
+                label="Preço do produto"
+                type="number"
+                variant="filled"
+                value={item ? productPrice : ""}
+              />
+              {errors.productPrice ? (
+                <span className="main__edit__error">{errors.productPrice}</span>
+              ) : null}
+              <TextField
+                onChange={(event) => {
+                  const value = event.target.value;
+                  setproductDescription(value);
+                  item.description = value;
+                }}
+                fullWidth
+                label="Descrição do produto"
+                type="text"
+                variant="filled"
+                value={item ? productDescription : ""}
+              />
+              {errors.productDescription ? (
+                <span className="main__edit__error">
+                  {errors.productDescription}
+                </span>
+              ) : null}
+              <Button
+                children={"Confirmar edição"}
+                nameClass="blue__button full__width"
+                onClickFunction={handleSubmit}
+                buttonType={"submit"}
+              />
+            </form>
+          </>
+        ) : (
+          <Loading />
+        )}
       </section>
       {isModalOpen ? <EditModal setIsModalOpen={setIsModalOpen} /> : null}
     </main>

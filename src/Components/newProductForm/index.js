@@ -10,6 +10,7 @@ const NewProductForm = ({
   validate,
   setError,
   image,
+  addNewItem,
   setImage,
 }) => {
   const [disabled, setDisabled] = useState(true);
@@ -39,6 +40,7 @@ const NewProductForm = ({
           formik.setFieldValue("productName", "");
           formik.setFieldValue("productPrice", "");
           formik.setFieldValue("productDescription", "");
+          addNewItem(formik.values);
           navigate("/manage-items");
         } else {
           setDisabled(true);

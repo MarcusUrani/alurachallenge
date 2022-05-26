@@ -4,8 +4,13 @@
   gap: 0.5rem;
 }
 
-.product__item__image {
+.product__item__image__content {
+  /* max-width: 174px; */
   width: 100%;
+}
+
+.product__item__image {
+  max-width: 172px;
 }
 
 .product__item__title {

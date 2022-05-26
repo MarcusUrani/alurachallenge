@@ -21,7 +21,7 @@ const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
       <section className="product__image--container">
         <img
           className="product__miniature"
-          src={`/assets/images/${miniature}.png`}
+          src={miniature}
           alt="miniatura da imagem do produto"
         />
         <section className="product__icons">
@@ -35,6 +35,11 @@ const Product = ({ name, price, tag, miniature, id, handleDeleteItem }) => {
           <Edit
             sx={{ color: "#fff", cursor: "pointer" }}
             onClick={() => {
+              window.scroll({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+              });
               navigate(`/edit-item/${itemEditId}`);
             }}
           />

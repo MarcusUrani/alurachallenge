@@ -1,0 +1,58 @@
+.main__manage {
+  background-color: var(--light-grey);
+  padding: 4rem 0;
+}
+
+.main__manage__container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.main__manage__header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.main__manage__title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.main__manage__button {
+  background-color: var(--blue);
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem;
+  transition: all ease 0.3s;
+}
+
+.main__manage__button:hover {
+  background-color: var(--light-blue);
+}
+
+.main__manage__products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .main__manage__container {
+    width: 90%;
+  }
+
+  .main__manage__title {
+    font-size: 1.375rem;
+  }
+
+  .main__manage__button {
+    font-size: 0.875rem;
+    padding: 0.5rem;
+  }
+}

@@ -5,7 +5,7 @@ import NewProductForm from "../../Components/newProductForm";
 import AddImageSection from "../../Components/addImageSection";
 import validate from "../../validation";
 
-const NewProduct = () => {
+const NewProduct = ({ items }) => {
   const [gadgetName, setGadgetName] = useState("computador");
   const [helperText, setHelperText] = useState(
     "Arraste para adicionar uma imagem para o produto"
@@ -13,6 +13,18 @@ const NewProduct = () => {
   const [image, setImage] = useState("");
   const [error, setError] = useState({});
   const [mobile, setMobile] = useState(false);
+  const [lastItemId, setLastItemId] = useState(0);
+  const newItem = {
+    id: lastItemId + 1,
+    name: "",
+    price: "",
+    description: "",
+    image: image,
+    slug: "items",
+    alt: "item image",
+    miniature: image,
+    tag: "#111111",
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -21,6 +33,22 @@ const NewProduct = () => {
       productDescription: "",
     },
   });
+
+  const readImageAsDataUrl = (image) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(image);
+    reader.onload = () => {
+      setImage(reader.result);
+    };
+  };
+
+  const handleNewItemValues = (values) => {
+    newItem.name = values.productName;
+    newItem.price = values.productPrice;
+    newItem.description = values.productDescription;
+
+    items.push(newItem);
+  };
 
   const dropHandler = (event) => {
     event.preventDefault();
@@ -31,7 +59,7 @@ const NewProduct = () => {
           event.dataTransfer.items[i].type.match(/^image\//)
         ) {
           let file = event.dataTransfer.items[i].getAsFile();
-          setImage(file);
+          readImageAsDataUrl(file);
           setHelperText("Imagem adicionada com sucesso");
         } else {
           setHelperText("Arraste apenas imagens");
@@ -64,7 +92,13 @@ const NewProduct = () => {
   useEffect(() => {
     verifyWindowSize();
     window.addEventListener("resize", verifyWindowSize);
-  }, []);
+    const getLastItemId = () => {
+      const lastItem = items.length > 0 ? items[items.length - 1] : null;
+      setLastItemId(lastItem ? lastItem.id : 0);
+    };
+
+    getLastItemId();
+  }, [items, setLastItemId, lastItemId]);
 
   return (
     <main className="new--product">
@@ -79,6 +113,7 @@ const NewProduct = () => {
           helperText={helperText}
           gadgetName={gadgetName}
           setHelperText={setHelperText}
+          readImage={readImageAsDataUrl}
           mobile={mobile}
         />
         {!image ? (
@@ -96,9 +131,11 @@ const NewProduct = () => {
           validate={validate}
           setError={setError}
           image={image}
+          addNewItem={handleNewItemValues}
           setImage={setImage}
         />
       </section>
+      {/* {image ? <img src={image} alt="" /> : null} */}
     </main>
   );
 };

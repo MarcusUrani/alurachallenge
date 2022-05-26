@@ -5,7 +5,7 @@ import Footer from "./Components/footer";
 import Main from "./Pages/Main";
 import Login from "./Pages/Login";
 import ItemDescription from "./Pages/ItemDescription";
-import AddNewItem from "./Pages/AddNewItem";
+import ManageItems from "./Pages/ManageItems";
 import Page404 from "./Pages/Page404";
 import { fetchApi } from "./api";
 import { useEffect, useState } from "react";
@@ -38,9 +38,9 @@ function App() {
         />
         <Route
           path="/manage-items"
-          element={<AddNewItem items={data} setItems={setData} />}
+          element={<ManageItems items={data} setItems={setData} />}
         />
-        <Route path="/new-product" element={<NewProduct />} />
+        <Route path="/new-product" element={<NewProduct items={data} />} />
         <Route path="/products" element={<AllProducts products={data} />} />
         <Route path="/edit-item/:slug" element={<EditItem products={data} />} />
         <Route path="*" element={<Page404 />} />

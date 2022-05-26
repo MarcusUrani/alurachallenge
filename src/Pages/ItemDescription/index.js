@@ -8,7 +8,8 @@ import Loading from "../../Components/loading";
 const ItemDescription = ({ products }) => {
   const params = useParams();
   const [similarItems, setSimilarItems] = useState();
-  const itemById = products.find((item) => item.id === params.slug);
+  const numberOnSlug = Number(params.slug);
+  const itemById = products.find((item) => item.id === numberOnSlug);
   const itemId = itemById.id;
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const ItemDescription = ({ products }) => {
       }
     };
     getSimilarItems();
-  }, [setSimilarItems, itemId, products, params.slug]);
+  }, [itemId, products]);
 
   return (
     <main className="main__description">
