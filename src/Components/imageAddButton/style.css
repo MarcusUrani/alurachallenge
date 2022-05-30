@@ -1,0 +1,20 @@
+.new--product__label {
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 1rem;
+  transition: all ease 0.3s;
+  width: 60%;
+}
+
+.new--product__label:hover {
+  background-color: var(--ice-white);
+}
+
+@media (max-width: 590px) {
+  .new--product__label {
+    display: none;
+  }
+}

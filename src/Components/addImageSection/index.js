@@ -1,4 +1,7 @@
 import React from "react";
+import ImageAddPreview from "../imageAddButton";
+import ImagePreview from "../imagePreview";
+import MobileImageSection from "../mobileImageSection";
 import "./style.css";
 
 const AddImageSection = ({
@@ -7,6 +10,7 @@ const AddImageSection = ({
   helperText,
   gadgetName,
   setHelperText,
+  image,
   readImage,
   mobile,
 }) => {
@@ -18,57 +22,33 @@ const AddImageSection = ({
           onDrop={(event) => dropHandler(event)}
           onDragOver={(event) => dragOverHandler(event)}
         >
-          <img
-            className="new--product__image"
-            src="/assets/images/image.svg"
-            alt=""
-          />
-          <p className="new--product__image--add">{helperText}</p>
+          {image ? (
+            <ImagePreview image={image} />
+          ) : (
+            <>
+              <img
+                className="new--product__image"
+                src="/assets/images/image.svg"
+                alt="adicione uma imagem"
+              />
+              <p className="new--product__image--add">{helperText}</p>
+            </>
+          )}
         </section>
       ) : (
-        <section className="new--product__add--image__mobile">
-          <label
-            className="new--product__add--image__mobile--container"
-            for="add__image"
-          >
-            <img
-              className="new--product__image"
-              src="/assets/images/image.svg"
-              alt=""
-            />
-            <p className="new--product__add--image__mobile--text">
-              {helperText}
-            </p>
-          </label>
-          <input
-            id="add__image"
-            className="new--product__button"
-            type={"file"}
-            accept="image/*"
-            onChange={(event) => {
-              const file = event.target.files[0];
-              readImage(file);
-              setHelperText("Imagem adicionada com sucesso");
-            }}
-          />
-        </section>
+        <MobileImageSection
+          helperText={helperText}
+          readImage={readImage}
+          setHelperText={setHelperText}
+        />
       )}
 
       <p className="new--product__text"> Ou </p>
       <section className="new--product__image__input">
-        <label className="new--product__label" for="add__image">
-          Procure no seu {gadgetName}
-        </label>
-        <input
-          id="add__image"
-          className="new--product__button"
-          type={"file"}
-          accept="image/*"
-          onChange={(event) => {
-            const file = event.target.files[0];
-            readImage(file);
-            setHelperText("Imagem adicionada com sucesso");
-          }}
+        <ImageAddPreview
+          readImage={readImage}
+          setHelperText={setHelperText}
+          gadgetName={gadgetName}
         />
       </section>
     </section>

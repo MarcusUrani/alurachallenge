@@ -116,6 +116,7 @@ const NewProduct = ({ items }) => {
           gadgetName={gadgetName}
           setHelperText={setHelperText}
           readImage={readImageAsDataUrl}
+          image={image}
           mobile={mobile}
         />
         {!image ? (
