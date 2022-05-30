@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import NewProductForm from "../../Components/newProductForm";
 import AddImageSection from "../../Components/addImageSection";
 import validate from "../../validation";
+import EditModal from "../../Components/editModal";
 
 const NewProduct = ({ items }) => {
   const [gadgetName, setGadgetName] = useState("computador");
@@ -14,6 +15,7 @@ const NewProduct = ({ items }) => {
   const [error, setError] = useState({});
   const [mobile, setMobile] = useState(false);
   const [lastItemId, setLastItemId] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const newItem = {
     id: lastItemId + 1,
     name: "",
@@ -133,9 +135,16 @@ const NewProduct = ({ items }) => {
           image={image}
           addNewItem={handleNewItemValues}
           setImage={setImage}
+          setIsModalOpen={setIsModalOpen}
         />
       </section>
-      {/* {image ? <img src={image} alt="" /> : null} */}
+      {isModalOpen ? (
+        <EditModal
+          setIsModalOpen={setIsModalOpen}
+          navigateSlug={"/manage-items"}
+          modalText={"Produto adicionado com sucesso!"}
+        />
+      ) : null}
     </main>
   );
 };

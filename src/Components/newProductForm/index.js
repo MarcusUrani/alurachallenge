@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./style.css";
 import { TextField } from "@mui/material";
 import Button from "../button";
-import { useNavigate } from "react-router-dom";
 
 const NewProductForm = ({
   error,
@@ -12,9 +11,9 @@ const NewProductForm = ({
   image,
   addNewItem,
   setImage,
+  setIsModalOpen,
 }) => {
   const [disabled, setDisabled] = useState(true);
-  const navigate = useNavigate();
 
   const handleCheckErrors = () => {
     setError(validate(formik.values));
@@ -41,7 +40,7 @@ const NewProductForm = ({
           formik.setFieldValue("productPrice", "");
           formik.setFieldValue("productDescription", "");
           addNewItem(formik.values);
-          navigate("/manage-items");
+          setIsModalOpen(true);
         } else {
           setDisabled(true);
         }

@@ -136,7 +136,13 @@ const EditItem = ({ products }) => {
           <Loading />
         )}
       </section>
-      {isModalOpen ? <EditModal setIsModalOpen={setIsModalOpen} /> : null}
+      {isModalOpen ? (
+        <EditModal
+          setIsModalOpen={setIsModalOpen}
+          navigateSlug={"/manage-items"}
+          modalText={"Produto editado com sucesso"}
+        />
+      ) : null}
     </main>
   );
 };
