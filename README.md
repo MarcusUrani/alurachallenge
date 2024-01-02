@@ -18,12 +18,6 @@
 
 - Formik
 
-- Axios
-
-- Json Server
-
-- [API](https://github.com/MarcusUrani/rest_api_alurageek).
-
 ## 🚀Metas
 
 - ✅ Semana 1 - Fazer a estruturação e estilização da página principal.
